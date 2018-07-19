@@ -40,7 +40,16 @@
               <li class="list-inline-item">
                 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
               </li>
-            <ul>
+            </ul>
+          <% elsif restaurant_signed_in? %>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <%= link_to 'Edit Restaurant Info', edit_restaurant_registration_path, :class => 'navbar-link' %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to('Logout', destroy_restaurant_session_path, method: :delete) %>
+              </li>
+            </ul>
           <% else %>
             <ul class="list-inline">
               <li class="list-inline-item">
@@ -49,7 +58,13 @@
               <li class="list-inline-item">
                 <%= link_to('Login', new_user_session_path)  %>
               </li>
-            <ul>
+              <li class="list-inline-item">
+                <%= link_to('Restaurants Login', new_restaurant_session_path)  %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to "Restaurant Sign up", new_restaurant_registration_path, :class => 'navbar-link'  %>
+              </li>
+            </ul>
           <% end %>
         </div>
 
