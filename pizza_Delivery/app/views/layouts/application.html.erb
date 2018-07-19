@@ -20,12 +20,51 @@
 
   <body>
 
+    <!-- Toolbar -->
+    <div class="container-fluid toolbar">
+      <div class="row">
+
+        <div class="col">
+        </div>
+
+        <div class="col">
+          <p class="text-center">Pizza Delivery System</p>
+        </div>
+
+        <div class="col">
+          <% if user_signed_in? %>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+              </li>
+            <ul>
+          <% else %>
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to('Login', new_user_session_path)  %>
+              </li>
+            <ul>
+          <% end %>
+        </div>
+
+    </div>
+
+    </div>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
+
+    <!-- application html -->
     <%= yield %>
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
