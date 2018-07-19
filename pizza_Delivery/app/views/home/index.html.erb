@@ -2,4 +2,14 @@
 <!-- of course we use american spelling of centre...-->
 <div class="container text-center">
   <h1>Welcome to にこまき Pizza Delivery</h1>
+
+
+  <% if user_signed_in? %>
+    <p>
+      <%= link_to 'Show Restaurants', restaurants_path, :class => 'navbar-link' %>
+    </p>
+
+  <% end %>
+
+
 </div>

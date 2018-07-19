@@ -3,6 +3,12 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  #get 'restaurants/index'
+  #get 'restaurants/show'
+  resources :restaurants
+
+
+
 
 
 
