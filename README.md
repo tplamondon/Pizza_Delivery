@@ -20,3 +20,5 @@ Readings
 - https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
 * Boostrap grid System
 - https://getbootstrap.com/docs/4.0/layout/grid/
+* Log in as this or that
+- https://stackoverflow.com/questions/4612545/devise-login-with-user-or-admin-models-and-basecamp-style-subdomains

@@ -4,15 +4,6 @@ Rails.application.routes.draw do
   get 'home/about'
   get 'home/index'
 
-  #get 'restaurants/index'
-  #get 'restaurants/show'
-  resources :restaurants
-
-
-
-
-
-
   # doesn't work for some reason???
   # here maybe? https://stackoverflow.com/questions/19057217/uninitialized-constant-sessionscontroller-in-api/19058081
   # ignore!
@@ -26,6 +17,12 @@ Rails.application.routes.draw do
     sessions: 'restaurants/sessions',
     registrations: 'restaurants/registrations'
   }
+
+  # NEEDS TO BE BELOW THE DEVISE_FOR STUFF
+  # https://stackoverflow.com/questions/7086583/creating-a-users-show-page-using-devise
+  #get 'restaurants/index'
+  #get 'restaurants/show'
+  resources :restaurants,  :only => [:show, :index]
 
   root 'home#index'
 
