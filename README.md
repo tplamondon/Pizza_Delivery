@@ -8,3 +8,15 @@ TODO:
  * Restaurant pages (menu's) that are editable by restaurants
  * Order Forms
  * better home page
+
+
+
+Readings
+* Authentication with devise
+- https://guides.railsgirls.com/devise
+* Setting up multiple devise user stuff
+- https://github.com/plataformatec/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
+* Adding sign up, sign in links
+- https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
+* Boostrap grid System
+- https://getbootstrap.com/docs/4.0/layout/grid/
