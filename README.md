@@ -5,3 +5,6 @@ We use devise for user accounts
 TODO:
  * Possibly add more fields to users
  * adjust devise default views of log in, sign up
+ * Restaurant pages (menu's) that are editable by restaurants
+ * Order Forms
+ * better home page
