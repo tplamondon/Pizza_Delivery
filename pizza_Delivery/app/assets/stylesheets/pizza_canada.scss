@@ -1,3 +1,15 @@
 // Place all the styles related to the PizzaCanada controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pizza_canada_menu{
+  background-color: #f1f1c1;
+}
+.pizza_canada_menu td{
+  padding: 2em;
+}
+
+.pizza_canada_pizza_image{
+  height: 20em;
+  width: 20em;
+}
