@@ -3,11 +3,14 @@
 <div class="container">
 
 
-  <p>TEST SHOW</p>
+  <h1 class="text-center"><%= @restaurant.name %></h1>
 
-  <p>
-    <% @restaurant.email %>
-  </p>
+  <ul class="noPoints">
+    <li><strong>Email</strong></li>
+    <li><%= @restaurant.email %></li>
+    <li><strong>Phone Number</strong></li>
+    <li><%= @restaurant.phoneNumber %></li>
+  </ul>
 
 
 </div>
