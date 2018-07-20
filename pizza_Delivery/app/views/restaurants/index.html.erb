@@ -5,16 +5,16 @@
 
   <table class="table">
     <tr>
-      <th>Title</th>
-      <th>Text</th>
+      <th>Name</th>
+      <th>Phone Number</th>
       <th></th>
     </tr>
 
     <tr>
       <% @restaurants.each do |restaurant| %>
         <tr>
-          <td></td>
-          <td></td>
+          <td><% restaurant.name %></td>
+          <td><% restaurant.phoneNumber %></td>
           <td><%= link_to 'Show', restaurant_path(restaurant) %></td>
       <% end %>
     </tr>
