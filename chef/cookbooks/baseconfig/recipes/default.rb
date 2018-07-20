@@ -42,6 +42,11 @@ execute 'bundle' do
   command 'bundle install'
 end
 
+#execute 'devise' do
+#  cwd '/home/vagrant/project/pizza_delivery'
+#  command 'rails g devise:install'
+#end
+
 execute 'migrate' do
   cwd '/home/vagrant/project/pizza_delivery'
   #user 'vagrant'
@@ -51,6 +56,6 @@ end
 
 execute 'host server' do
   cwd '/home/vagrant/project/pizza_delivery'
-  command './bin/rails server -d -b 0.0.0.0'
+  command 'rails server -d -b 0.0.0.0'
   #user 'vagrant'
 end
