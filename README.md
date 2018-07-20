@@ -22,3 +22,10 @@ Readings
 - https://getbootstrap.com/docs/4.0/layout/grid/
 * Log in as this or that
 - https://stackoverflow.com/questions/4612545/devise-login-with-user-or-admin-models-and-basecamp-style-subdomains
+* Devise
+- https://github.com/plataformatec/devise#strong-parameters
+* Adding more fields to model
+- https://stackoverflow.com/questions/14371633/adding-more-fields-to-an-existing-model
+* Adding more fields to devise in sanatised parameters (really, just look what I did under controllers/restaurants/registrations_controller)
+* more or less, uncomment out the 2 things near top of before_action and add fields into keys: array
+- https://stackoverflow.com/questions/42052998/adding-more-fields-to-devises-new-registration-view-causing-activerecordstate
