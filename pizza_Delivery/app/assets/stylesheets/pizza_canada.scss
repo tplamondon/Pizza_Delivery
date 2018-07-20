@@ -2,15 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#pizza_canada_menu{
+
+#pc_logo {
+  height: 30em;
+  width: 30em;
+}
+
+
+
+#pizza_canada_menu {
   background-color: #f1f1c1;
   border: 1em solid black;
 }
-#pizza_canada_menu td{
+#pizza_canada_menu td {
   padding: 2em;
 }
 
-.pizza_canada_pizza_image{
+.pizza_canada_pizza_image {
   height: 20em;
   width: 20em;
 }

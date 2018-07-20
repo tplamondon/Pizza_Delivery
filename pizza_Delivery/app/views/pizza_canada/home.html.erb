@@ -1,8 +1,20 @@
 <div class="container">
   <h1 class="text-center">Home</h1>
 
+  <!--the divs are purely for centering the logo-->
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <img id="pc_logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Maple_Leaf.svg/1024px-Maple_Leaf.svg.png" alt="logo" widht="50em" height="50em">
+    </div>
+    <div class="col">
+    </div>
+
+  </div>
+
   <ul class="list-inline">
-    <li class="list-inline-item"><%= link_to 'Info', pizza_canada_info_path %></li>
-    <li class="list-inline-item"><%= link_to 'Menu', pizza_canada_menu_path %></li>
+    <li class="list-inline-item"><%= link_to 'Info', pizza_canada_info_path, class:"button"%></li>
+    <li class="list-inline-item"><%= link_to 'Menu', pizza_canada_menu_path, class:"button" %></li>
   </ul>
 </div>
