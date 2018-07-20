@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  get 'pizza_canada/menu'
+  get 'pizza_canada/home'
+  get 'pizza_canada/info'
   get 'home/about'
   get 'home/index'
 

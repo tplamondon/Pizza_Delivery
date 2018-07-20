@@ -18,3 +18,8 @@
 div.toolbar{
   background-color: cyan;
 }
+
+
+ul.noPoints {
+  list-style-type: none;
+}
