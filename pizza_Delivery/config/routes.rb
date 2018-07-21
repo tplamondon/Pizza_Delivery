@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
 
+  devise_for :drivers
+  devise_for :managers
+  devise_for :customers
   get 'pizza_canada/menu'
   get 'pizza_canada/home'
   get 'pizza_canada/info'

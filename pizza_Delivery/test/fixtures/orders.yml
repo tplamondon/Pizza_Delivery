@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ctotal_cost: 
+  ctotal_cost: 
+  tips: 
+  tips: 
+  feedback: 9.99
+  add_comments: MyString
+  customer: one
+  store: one
+  driver: one
+
+two:
+  ctotal_cost: 
+  ctotal_cost: 
+  tips: 
+  tips: 
+  feedback: 9.99
+  add_comments: MyString
+  customer: two
+  store: two
+  driver: two
