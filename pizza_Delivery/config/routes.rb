@@ -32,6 +32,11 @@ Rails.application.routes.draw do
   #get 'restaurants/show'
   resources :restaurants,  :only => [:show, :index]
 
+  #https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
+  resources :products, only: [:index]
+  resource :cart, only: [:show]
+  resources :order_items, only: [:create, :update, :destroy]
+
   root 'home#index'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
