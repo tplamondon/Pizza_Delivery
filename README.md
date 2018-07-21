@@ -33,3 +33,6 @@ Readings
 
 
 * Code taken from here: https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
+
+
+Make sure to run "rake db:seed"
