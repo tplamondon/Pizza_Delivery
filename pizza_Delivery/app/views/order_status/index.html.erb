@@ -1,2 +1,13 @@
-<h1>OrderStatus#index</h1>
-<p>Find me in app/views/order_status/index.html.erb</p>
+
+
+
+<div class="container">
+  <h1>Different Orders to view</h1>
+  <ul>
+    <li><%= link_to 'Placed', order_status_placed_path %></li>
+    <li><%= link_to 'In Progress', order_status_placed_path %></li>
+    <li><%= link_to 'Completed', order_status_placed_path %></li>
+    <li><%= link_to 'Shipped', order_status_placed_path %></li>
+    <li><%= link_to 'Cancelled', order_status_placed_path %></li>
+  </ul>
+</div>
