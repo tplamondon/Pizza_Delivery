@@ -4,22 +4,22 @@ class OrderStatusController < ApplicationController
   end
 
   def inProgress
-    @order_status = OrderStatus.where(id: [1])
+    @orders = Order.all.where(order_status_id: [1])
   end
 
   def placed
-    @order_status = OrderStatus.where(id: [2])
+    @orders = Order.all.where(order_status_id: [2])
   end
 
   def shipped
-    @order_status = OrderStatus.where(id: [3])
+    @orders = Order.all.where(order_status_id: [3])
   end
 
   def completed
-    @order_status = OrderStatus.where(id: [4])
+    @orders = Order.all.where(order_status_id: [4])
   end
 
   def cancelled
-    @order_status = OrderStatus.where(id: [5])
+    @orders = Order.all.where(order_status_id: [5])
   end
 end

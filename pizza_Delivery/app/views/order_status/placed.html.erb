@@ -1,2 +1,25 @@
-<h1>OrderStatus#placed</h1>
-<p>Find me in app/views/order_status/placed.html.erb</p>
+
+
+
+
+<div class="container">
+  <table class="table">
+    <tr>
+      <th>Order Location</th>
+      <th>Order Total</th>
+      <th>Created</th>
+      <th>Order</th>
+
+    </tr>
+    <% @orders.each do |o| %>
+      <tr>
+        <td><%= o.location %></td>
+        <td><%= o.total %></td>
+        <td><%= o.created_at %></td>
+        <td><%= o %></th>
+      <% end %>
+    </tr>
+
+
+  <%= link_to 'Back', order_status_index_path %>
+</div>
