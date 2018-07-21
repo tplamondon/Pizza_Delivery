@@ -7,7 +7,9 @@ TODO:
  * adjust devise default views of log in, sign up
  * Restaurant pages (menu's) that are editable by restaurants
  * Order Forms
- * better home page
+ * better home page using bootstrap
+ * implement google maps api and user addresses
+
 
 
 
