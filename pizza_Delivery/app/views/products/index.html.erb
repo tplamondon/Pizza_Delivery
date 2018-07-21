@@ -1,23 +1,9 @@
 <h3 class="text-center">Products for Sale</h3>
 
 
-<% if @order_item.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@order_item.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @order_item.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 <div class="row">
   <div class="col-xs-6 col-xs-offset-3">
-    <p id="debug">DEBUG</p>
+    <p id="debug"></p>
     <% @products.each do |product| %>
       <%= render "product_row", product: product, order_item: @order_item %>
     <% end %>
