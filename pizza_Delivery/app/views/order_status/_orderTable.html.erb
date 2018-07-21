@@ -11,7 +11,7 @@
     <% @orders.each do |o| %>
       <tr>
         <td><%= o.location %></td>
-        <td><%= o.total %></td>
+        <td>$<%= o.subtotal %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
         <td><%= o %></th>
       <% end %>
