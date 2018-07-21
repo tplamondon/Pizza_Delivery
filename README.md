@@ -32,7 +32,8 @@ Readings
 
 
 
-* Code taken from here: https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
+* Code taken from here: https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails1
+* fix for cart problem provided by comment by  andre-lgf (change before_create :set_order_status -> before_validation :set_order_status, on: :create)
 
 
 Make sure to run "rake db:seed"
