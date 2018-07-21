@@ -29,3 +29,7 @@ Readings
 * Adding more fields to devise in sanatised parameters (really, just look what I did under controllers/restaurants/registrations_controller)
 * more or less, uncomment out the 2 things near top of before_action and add fields into keys: array
 - https://stackoverflow.com/questions/42052998/adding-more-fields-to-devises-new-registration-view-causing-activerecordstate
+
+
+
+* Code taken from here: https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
