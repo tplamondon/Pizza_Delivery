@@ -1,5 +1,11 @@
-<% if @order.errors.any? || @order_item.errors.any? %>
-alert("not valid.")
+<% if @order.errors.any?  %>
+  alert("not valid.")
+  <% @order.errors.full_messages.each do |msg| %>
+      $("#debug").text("<%= msg %>")
+  <% end %>
+<% elsif @order_item.errors.any? %>
+  alert("not valid.")
+  $("#debug").text("order_item")
 <% else %>
   $(".cart-text").html("<%= escape_javascript(render 'layouts/cart_text') %>")
 <% end %>
