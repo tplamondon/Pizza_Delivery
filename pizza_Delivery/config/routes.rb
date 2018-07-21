@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
 
+  get 'order_status/index'
+  get 'order_status/inProgress'
+  get 'order_status/placed'
+  get 'order_status/shipped'
+  get 'order_status/completed'
+  get 'order_status/cancelled'
   get 'order_items/create'
   get 'order_items/update'
   get 'order_items/destroy'
