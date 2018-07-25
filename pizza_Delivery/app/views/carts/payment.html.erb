@@ -1,11 +1,42 @@
 <div class="payment-form  ">
   <%= form_tag do %>
-  Form contents
-  <%= text_field(:person, :name) %>
-<%= telephone_field(:user, :phone) %>
+  <div>
+    <%= label_tag(:user_name, "Name on card") %>
+    <%=text_field_tag 'user_name' %>
+  </div>
+  <div>
+    <%= label_tag(:user_address, "Billing Address") %>
+    <%=text_field_tag 'user_address' %>
+  </div>
+  <div>
+    <%= label_tag(:user_city, "City") %>
+    <%=text_field_tag 'user_city' %>
+  </div>
+  <div>
+    <%= label_tag(:user_province, "Province") %>
+    <%= select_tag :user_province, options_for_select(ca_provinces) %>
+  </div>
+  <div>
+    <%= label_tag(:user_zip, "Postal Code") %>
+    <%=text_field_tag 'user_zip' %>
+  </div>
+  <div>
+    <%= label_tag(:user_card, "Card Number") %>
+    <%=text_field_tag 'user_card'%>
+  </div>
+  <div>
+    <%= label_tag(:user_sc, "Security Code") %>
+    <%=text_field_tag 'user_sc', nil, maxlength: 3 %>
+  </div>
+  <div>
+    <%= label_tag(:user_phone, "Phone number") %>
+    <%= telephone_field_tag 'user_phone' %>
+  </div>
   <div>
     <%= check_box_tag(:ship_address) %>
   <%= label_tag(:ship_address, "Use Address on file as shipping address") %>
   </div>
+  <div><%= link_to 'Confirm Payment', order_status_index_path, class:"button"%></div> <!-- this should do something -->
+
 <% end %>
 </div>
