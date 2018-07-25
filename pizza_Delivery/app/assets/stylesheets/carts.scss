@@ -1,7 +1,9 @@
 // Place all the styles related to the Carts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.payment-page{
+  display:inline-flex;
+}
 .payment-form
 {
   display: -ms-flexbox; /* IE10 */
@@ -34,7 +36,20 @@ input[type=text] {
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-
+tr:nth-child(even) {
+  background: #D0E4F5;
+}
+td
+{
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+  font-size: 13px;
+}
+th
+{
+  border: 1px solid #AAAAAA;
+  padding: 3px 2px;
+}
 label {
   margin-bottom: 10px;
   display: inline;

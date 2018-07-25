@@ -1,4 +1,4 @@
-<div>
+<div class="payment-page">
   <div class="payment-form  ">
   <%= form_tag do %>
   <h3>Billing Information</h3>
@@ -52,6 +52,21 @@
       <% @order_items.each do |order_item| %>
         <%= render 'carts/payment_cart_row', product: order_item.product, order_item: order_item, show_total: true %>
       <% end %>
+      <tr>
+        <td>Shipping</td>
+        <td></td>
+        <td>$10.00</td>
+      </tr>
+      <tr>
+        <td>Subtotal</td>
+        <td></td>
+        <td><%=number_to_currency @order.subtotal%></td>
+      </tr>
+      <tr>
+        <td>Total</td>
+        <td></td>
+        <td><%=number_to_currency @order.total%></td>
+      </tr>
     </table>
   </div>
 </div>
