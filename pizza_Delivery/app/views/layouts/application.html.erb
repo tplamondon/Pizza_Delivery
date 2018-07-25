@@ -56,6 +56,9 @@
                 <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
               </li>
               <li>
+                <%= link_to('View Orders', order_status_index_path, :class => 'navbar-link') %>
+              </li>
+              <li>
                 <h1 class="cart-text"><%= render 'layouts/cart_text' %></h1>
               </li>
             </ul>
