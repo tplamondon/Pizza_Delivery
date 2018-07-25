@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'order_items/update'
   get 'order_items/destroy'
   get 'carts/show'
+  get 'carts/payment'
   get 'products/index'
   get 'pizza_canada/menu'
   get 'pizza_canada/home'

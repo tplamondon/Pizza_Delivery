@@ -1,0 +1,11 @@
+<div class="payment-form  ">
+  <%= form_tag do %>
+  Form contents
+  <%= text_field(:person, :name) %>
+<%= telephone_field(:user, :phone) %>
+  <div>
+    <%= check_box_tag(:ship_address) %>
+  <%= label_tag(:ship_address, "Use Address on file as shipping address") %>
+  </div>
+<% end %>
+</div>
