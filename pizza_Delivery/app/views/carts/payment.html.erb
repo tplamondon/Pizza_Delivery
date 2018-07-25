@@ -1,5 +1,7 @@
-<div class="payment-form  ">
+<div>
+  <div class="payment-form  ">
   <%= form_tag do %>
+  <h3>Billing Information</h3>
   <div>
     <%= label_tag(:user_name, "Name on card") %>
     <%=text_field_tag 'user_name' %>
@@ -33,10 +35,23 @@
     <%= telephone_field_tag 'user_phone' %>
   </div>
   <div>
-    <%= check_box_tag(:ship_address) %>
-  <%= label_tag(:ship_address, "Use Address on file as shipping address") %>
+    <%= check_box_tag(:bill_address) %>
+  <%= label_tag(:bill_address, "Use Address on file as billing address") %>
   </div>
-  <div><%= link_to 'Confirm Payment', order_status_index_path, class:"button"%></div> <!-- this should do something -->
-
-<% end %>
+  <div><%= link_to 'Confirm Payment', order_status_index_path, class:"button"%></div>
+  <!-- ^^^^^ This should confirm order and change its status from in progress to done then goes to view it-->
+  <% end %>
+  </div>
+  <div>
+    <table> Review Your Orders
+      <tr>
+        <th>Item Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+      </tr>
+      <% @order_items.each do |order_item| %>
+        <%= render 'carts/payment_cart_row', product: order_item.product, order_item: order_item, show_total: true %>
+      <% end %>
+    </table>
+  </div>
 </div>
