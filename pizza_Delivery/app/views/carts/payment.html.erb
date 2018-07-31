@@ -1,47 +1,59 @@
 <div class="payment-page">
   <div class="payment-form  ">
-  <%= form_tag do %>
-  <h3>Billing Information</h3>
-  <div>
-    <%= label_tag(:user_name, "Name on card") %>
-    <%=text_field_tag 'user_name' %>
+    <!-- the stuff that works to update location -->
+    <%= form_with(model: current_order, local: true) do |form| %>
+    <h3>Billing Information</h3>
+      <% if current_order.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(current_order.errors.count, "error") %> prohibited
+          this article from being saved:
+        </h2>
+        <ul>
+          <% current_order.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+    <div>
+      <%= form.label(:name, "Name on card") %>
+      <%= form.text_field :name, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:bill_address, "Billing Address") %>
+      <%= form.text_field :bill_address, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:city, "City") %>
+      <%= form.text_field :city, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:province, "Province") %>
+      <%= form.text_field :province, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:location, "Postal Code") %>
+      <%= form.text_field :location, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:cardNumber, "Card Number") %>
+      <%= form.text_field :cardNumber, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:securityCode, "Security Code") %>
+      <%= form.text_field :securityCode, :required => true %>
+    </div>
+    <div>
+      <%= form.label(:phoneNumber, "Phone Number") %>
+      <%= form.text_field :phoneNumber, :required => true %>
+    </div>
+    <div>
+      <%= form.submit "Confirm Payment" %>
+    </div>
   </div>
-  <div>
-    <%= label_tag(:user_address, "Billing Address") %>
-    <%=text_field_tag 'user_address' %>
-  </div>
-  <div>
-    <%= label_tag(:user_city, "City") %>
-    <%=text_field_tag 'user_city' %>
-  </div>
-  <div>
-    <%= label_tag(:user_province, "Province") %>
-    <%= select_tag :user_province, options_for_select(ca_provinces) %>
-  </div>
-  <div>
-    <%= label_tag(:user_zip, "Postal Code") %>
-    <%=text_field_tag 'user_zip' %>
-  </div>
-  <div>
-    <%= label_tag(:user_card, "Card Number") %>
-    <%=text_field_tag 'user_card'%>
-  </div>
-  <div>
-    <%= label_tag(:user_sc, "Security Code") %>
-    <%=text_field_tag 'user_sc', nil, maxlength: 3 %>
-  </div>
-  <div>
-    <%= label_tag(:user_phone, "Phone number") %>
-    <%= telephone_field_tag 'user_phone' %>
-  </div>
-  <div>
-    <%= check_box_tag(:bill_address) %>
-  <%= label_tag(:bill_address, "Use Address on file as billing address") %>
-  </div>
-  <div><%= link_to 'Confirm Payment', order_status_index_path, class:"button"%></div>
-  <!-- ^^^^^ This should confirm order and change its status from in progress to done then goes to view it-->
   <% end %>
-  </div>
+
   <div>
     <table> Review Your Orders
       <tr>
@@ -69,34 +81,5 @@
       </tr>
     </table>
   </div>
-
-  <!-- the stuff that works to update location -->
-  <%= form_with(model: current_order, local: true) do |form| %>
-    <% if current_order.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(current_order.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% current_order.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-    <p>
-      <%= label_tag(:location, "Postal Code") %><br>
-      <%= form.text_field :location %>
-    </p>
-    <p>
-      <%= form.submit %>
-    </p>
-   <% end %>
- </p>
-
-
-
-
-
+</div>
 </div>
