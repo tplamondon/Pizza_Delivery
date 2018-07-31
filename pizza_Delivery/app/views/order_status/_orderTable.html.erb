@@ -13,7 +13,7 @@
         <td><%= o.location %></td>
         <td>$<%= o.subtotal %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
-        <td><%= o %></th>
+        <td><%= link_to 'Show', order_path(o) %></th>
       <% end %>
     </tr>
   </table>
