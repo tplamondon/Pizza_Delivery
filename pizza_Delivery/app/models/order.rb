@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
   belongs_to :order_status
-  has_many :order_items
+  has_many :order_items, :dependent => :delete_all # https://stackoverflow.com/questions/37025885/rails-cannot-delete-or-update-a-parent-row-a-foreign-key-constraint-fails
+  # allows us to delete orders now
   #before_create :set_order_status
   before_validation :set_order_status, on: :create
   before_save :update_subtotal

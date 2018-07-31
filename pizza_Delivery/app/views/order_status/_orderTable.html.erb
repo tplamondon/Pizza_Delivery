@@ -6,6 +6,7 @@
       <th>Order Total</th>
       <th>Created</th>
       <th>Order</th>
+      <th>Delete</th>
 
     </tr>
     <% @orders.each do |o| %>
@@ -14,6 +15,7 @@
         <td>$<%= o.subtotal %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
         <td><%= link_to 'Show', order_path(o) %></th>
+        <td><%= link_to 'Delete', order_path(o), method: :delete %>
       <% end %>
     </tr>
   </table>
