@@ -38,7 +38,7 @@ Rails.application.routes.draw do
   #get 'restaurants/index'
   #get 'restaurants/show'
   resources :restaurants,  :only => [:show, :index]
-  resources :orders, :only => [:show, :index]
+  resources :orders, :only => [:show]
 
   #https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
   resources :products, only: [:index]
