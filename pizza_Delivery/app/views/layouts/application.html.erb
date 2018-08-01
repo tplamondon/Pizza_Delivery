@@ -74,6 +74,12 @@
               <li>
                 <%= link_to('View Orders', order_status_index_path, :class => 'navbar-link') %>
               </li>
+              <li>
+                <%= link_to('Create new restaurant admin', new_restaurant_path, :class => 'navbar-link') %>
+              </li>
+              <li>
+                <%= link_to('View admins', restaurants_path, :class => 'navbar-link') %>
+              </li>
             </ul>
           <% else %>
             <ul class="nav">

@@ -1,0 +1,54 @@
+
+
+<!-- https://stackoverflow.com/questions/24875403/only-allow-admin-user-to-create-new-users-in-rails-with-devise-no-external-modu -->
+<div class="container">
+  <%= form_with scope: :restaurant, url: create_restaurant_path do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@restaurant.errors.count, "error") %> prohibited
+        this article from being saved:
+      </h2>
+      <ul>
+        <% @restaurant.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phoneNumber %><br />
+    <%= f.text_field :phoneNumber %>
+  </div>
+
+  <div class="field">
+    <!--<%= f.label :name %><br /> -->
+    <p><strong>Name</strong></p>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+  <% end %>
+
+</div>

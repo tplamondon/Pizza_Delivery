@@ -23,3 +23,5 @@ OrderStatus.create! id: 5, name: "Cancelled"
 
 #OrderItem.delete_all
 #Order.delete_all
+
+Restaurant.delete_all
