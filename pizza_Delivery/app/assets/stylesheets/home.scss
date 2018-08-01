@@ -1,3 +1,18 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.pic-col
+{
+  width:70%;
+  height:100%;
+}
+.btn-danger
+{
+   display:block;
+}
+.mynav .col
+{
+    width: auto;
+    flex-basis:auto;
+}
