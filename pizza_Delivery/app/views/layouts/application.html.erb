@@ -71,6 +71,9 @@
               <li>
                 <%= link_to('Logout', destroy_restaurant_session_path, method: :delete) %>
               </li>
+              <li>
+                <%= link_to('View Orders', order_status_index_path, :class => 'navbar-link') %>
+              </li>
             </ul>
           <% else %>
             <ul class="nav">
@@ -80,14 +83,14 @@
               <li>
                 <%= link_to('Login', new_user_session_path)  %>
               </li>
-              <!--
+
               <li>
                 <%= link_to "Restaurant Sign up", new_restaurant_registration_path, :class => 'navbar-link'  %>
               </li>
               <li>
                 <%= link_to('Restaurants Login', new_restaurant_session_path)  %>
               </li>
-              -->
+
             </ul>
           <% end %>
         </div>
