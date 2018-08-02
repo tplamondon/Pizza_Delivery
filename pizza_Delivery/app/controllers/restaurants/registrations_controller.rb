@@ -40,6 +40,10 @@ class Restaurants::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  def sign_up(resource_name, resource)
+   #sign_in(resource_name, resource)
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -53,12 +57,14 @@ class Restaurants::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+   def after_sign_up_path_for(resource)
+     super(resource)
+     #redirect_to restaurants_path
+   end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+   def after_inactive_sign_up_path_for(resource)
+     super(resource)
+     #redirect_to restaurants_path
+   end
 end
