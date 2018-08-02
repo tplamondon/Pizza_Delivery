@@ -1,0 +1,30 @@
+
+
+<div class="container">
+  <h1>Order</h1>
+  <ul class="noPoints">
+    <li><p>Subtotal: $<%= @order.subtotal %></p></li>
+    <li><p>Shipping: $10</p></li>
+    <li><p>Total: $<%= @order.subtotal + 10%></p></li>
+    <li><p>Location: <%= @order.location %></p></li>
+  </ul>
+
+  <h3>Items</h3>
+  <table class="table">
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <% @order.order_items.each do |o| %>
+      <tr>
+        <td><%= o.product.name %></td>
+        <td><%= o.quantity.to_i %></td>
+        <td><%=number_to_currency o.total_price %></td>
+      </tr>
+    <% end %>
+    <tr>
+    </tr>
+  </table>
+
+</div>

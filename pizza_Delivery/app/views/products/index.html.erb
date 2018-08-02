@@ -1,11 +1,52 @@
 <h3 class="text-center">Products for Sale</h3>
 
-
+<div class="container" style="width: 50%">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#pizza">Pizza's</a></li>
+    <li><a data-toggle="tab" href="#drink">Drinks</a></li>
+    <li><a data-toggle="tab" href="#dessert">Desserts</a></li>
+    <li><a data-toggle="tab" href="#appetiser">Appetisers</a></li>
+    <li><a data-toggle="tab" href="#wing">Wings</a></li>
+  </ul>
+</div>
 <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
+  <div class="col-xs-6 col-xs-offset-3 tab-content">
+    <div id="pizza" class="tab-pane fade in active">
+      <% @products.each do |product| %>
+        <% if product.food == 1 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="drink" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 2 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="dessert" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 3 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="appetiser" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 4 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="wing" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 5 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
     <p id="debug"></p>
-    <% @products.each do |product| %>
-      <%= render "product_row", product: product, order_item: @order_item %>
-    <% end %>
+
   </div>
 </div>

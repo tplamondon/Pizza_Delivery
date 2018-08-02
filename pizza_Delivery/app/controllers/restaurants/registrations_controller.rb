@@ -3,6 +3,7 @@
 class Restaurants::RegistrationsController < Devise::RegistrationsController
   include Accessible
   skip_before_action :check_user, except: [:new, :create]
+  before_action :ban_new, only: [:new, :create]
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
 
@@ -40,6 +41,11 @@ class Restaurants::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  # prevent auto log in
+  def sign_up(resource_name, resource)
+   #sign_in(resource_name, resource)
+  end
+
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -53,12 +59,14 @@ class Restaurants::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+   def after_sign_up_path_for(resource)
+     super(resource)
+     #redirect_to restaurants_path
+   end
 
   # The path used after sign up for inactive accounts.
-  # def after_inactive_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+   def after_inactive_sign_up_path_for(resource)
+     super(resource)
+     #redirect_to restaurants_path
+   end
 end

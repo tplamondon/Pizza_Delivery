@@ -21,11 +21,20 @@ class ApplicationController < ActionController::Base
   helper_method :current_order
 
   def current_order
-    if !session[:order_id].nil?
-      Order.find(session[:order_id])
-    else
+    # try catch in case order gets deleted that user is using, avoid a crash
+    begin
+      if !session[:order_id].nil?
+        Order.find(session[:order_id])
+      else
+        Order.new
+      end
+    rescue => ex
       Order.new
     end
+  end
+
+  def ban_new
+    redirect_to root_path
   end
 
 end

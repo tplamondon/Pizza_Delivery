@@ -37,7 +37,10 @@ Rails.application.routes.draw do
   # https://stackoverflow.com/questions/7086583/creating-a-users-show-page-using-devise
   #get 'restaurants/index'
   #get 'restaurants/show'
-  resources :restaurants,  :only => [:show, :index]
+  resources :restaurants, :only => [:show, :index, :new]
+  # https://stackoverflow.com/questions/24875403/only-allow-admin-user-to-create-new-users-in-rails-with-devise-no-external-modu
+  post 'create_restaurant' => 'restaurants#create', as: :create_restaurant
+  resources :orders, :only => [:show, :destroy, :update, :edit]
 
   #https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
   resources :products, only: [:index]

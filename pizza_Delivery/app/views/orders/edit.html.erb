@@ -1,0 +1,27 @@
+
+<div class="container"
+<%= form_with(model: current_order, local: true) do |form| %>
+<h3>Update Status</h3>
+  <% if current_order.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <%= pluralize(current_order.errors.count, "error") %> prohibited
+      this article from being saved:
+    </h2>
+    <ul>
+      <% current_order.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div>
+  <%= form.label(:order_status_id, "Status") %>
+  <%= form.collection_select :order_status_id, @order_status, :id, :name, include_blank: false, :required => true %>
+</div>
+<div>
+  <%= form.submit "Confirm" %>
+</div>
+
+<% end %>
+</div>
