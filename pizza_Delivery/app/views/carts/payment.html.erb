@@ -50,6 +50,9 @@
       <%= form.label(:phoneNumber, "Phone Number") %>
       <%= form.text_field :phoneNumber, :required => true %>
     </div>
+    <div>
+      <%= form.hidden_field :userId, :required => true, :value => current_user.id %>
+    </div>
 
 
   </div>

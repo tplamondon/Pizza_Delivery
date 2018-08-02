@@ -4,22 +4,43 @@ class OrderStatusController < ApplicationController
   end
 
   def inProgress
-    @orders = Order.all.where(order_status_id: [1])
+    #@orders = Order.all.where(order_status_id: [1]
+    if current_user
+      @orders = Order.all.where(order_status_id: [1], userId: [current_user.id])
+    elsif current_restaurant
+      @orders = Order.all.where(order_status_id: [1]
+    end
   end
 
   def placed
-    @orders = Order.all.where(order_status_id: [2])
+    if current_user
+      @orders = Order.all.where(order_status_id: [2], userId: [current_user.id])
+    elsif current_restaurant
+      @orders = Order.all.where(order_status_id: [2]
+    end
   end
 
   def shipped
-    @orders = Order.all.where(order_status_id: [3])
+    if current_user
+      @orders = Order.all.where(order_status_id: [3], userId: [current_user.id])
+    elsif current_restaurant
+      @orders = Order.all.where(order_status_id: [3]
+    end
   end
 
   def completed
-    @orders = Order.all.where(order_status_id: [4])
+    if current_user
+      @orders = Order.all.where(order_status_id: [4], userId: [current_user.id])
+    elsif current_restaurant
+      @orders = Order.all.where(order_status_id: [4]
+    end
   end
 
   def cancelled
-    @orders = Order.all.where(order_status_id: [5])
+    if current_user
+      @orders = Order.all.where(order_status_id: [5], userId: [current_user.id])
+    elsif current_restaurant
+      @orders = Order.all.where(order_status_id: [5]
+    end
   end
 end
