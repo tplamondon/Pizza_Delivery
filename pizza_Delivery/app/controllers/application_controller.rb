@@ -33,4 +33,8 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def ban_new
+    redirect_to root_path
+  end
+
 end

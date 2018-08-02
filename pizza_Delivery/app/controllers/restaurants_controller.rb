@@ -30,6 +30,7 @@ class RestaurantsController < ApplicationController
   end
 
   private
+    # FINALLY!
     def restaurant_params
       params.require(:restaurant).permit(:email, :password, :password_confirmation, :encrypted_password, :name, :phoneNumber)
     end
