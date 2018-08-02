@@ -25,3 +25,6 @@ OrderStatus.create! id: 5, name: "Cancelled"
 #Order.delete_all
 
 Restaurant.delete_all
+#Restaurant.create! name: "Admin", email: "admin@sfu.ca", password:"pizzaCanada"
+restaurant = Restaurant.new(:name => 'admin', :email => 'admin@sfu.ca', :password => 'pizzaCanada', :password_confirmation => 'pizzaCanada')
+restaurant.save!
