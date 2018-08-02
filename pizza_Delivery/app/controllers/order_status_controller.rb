@@ -4,43 +4,48 @@ class OrderStatusController < ApplicationController
   end
 
   def inProgress
-    #@orders = Order.all.where(order_status_id: [1]
-    if current_user
+    #@orders = Order.all.where(order_status_id: [1])
+    if user_signed_in?
       @orders = Order.all.where(order_status_id: [1], userId: [current_user.id])
-    elsif current_restaurant
-      @orders = Order.all.where(order_status_id: [1]
+    elsif restaurant_signed_in?
+      @orders = Order.all.where(order_status_id: [1])
+    else
     end
   end
 
   def placed
-    if current_user
+    if user_signed_in?
       @orders = Order.all.where(order_status_id: [2], userId: [current_user.id])
-    elsif current_restaurant
-      @orders = Order.all.where(order_status_id: [2]
+    elsif restaurant_signed_in?
+      @orders = Order.all.where(order_status_id: [2])
+    else
     end
   end
 
   def shipped
-    if current_user
+    if user_signed_in?
       @orders = Order.all.where(order_status_id: [3], userId: [current_user.id])
-    elsif current_restaurant
-      @orders = Order.all.where(order_status_id: [3]
+    elsif restaurant_signed_in?
+      @orders = Order.all.where(order_status_id: [3])
+    else
     end
   end
 
   def completed
-    if current_user
+    if user_signed_in?
       @orders = Order.all.where(order_status_id: [4], userId: [current_user.id])
-    elsif current_restaurant
-      @orders = Order.all.where(order_status_id: [4]
+    elsif restaurant_signed_in?
+      @orders = Order.all.where(order_status_id: [4])
+    else
     end
   end
 
   def cancelled
-    if current_user
+    if user_signed_in?
       @orders = Order.all.where(order_status_id: [5], userId: [current_user.id])
-    elsif current_restaurant
-      @orders = Order.all.where(order_status_id: [5]
+    elsif restaurant_signed_in?
+      @orders = Order.all.where(order_status_id: [5])
+    else
     end
   end
 end
