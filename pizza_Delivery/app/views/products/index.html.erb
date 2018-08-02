@@ -1,16 +1,16 @@
+<h1 style="color:white;"> background stuff</h1>
 <h3 class="text-center">Products for Sale</h3>
 
-<div class="container" style="width: 50%">
+<div class="container" >
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#pizza">Pizza's</a></li>
-    <li><a data-toggle="tab" href="#drink">Drinks</a></li>
-    <li><a data-toggle="tab" href="#dessert">Desserts</a></li>
-    <li><a data-toggle="tab" href="#appetiser">Appetisers</a></li>
-    <li><a data-toggle="tab" href="#wing">Wings</a></li>
+    <li class="active"><a class="btn btn-danger btn-lg" data-toggle="tab" href="#pizza">Pizza's</a></li>
+    <li><a class="btn btn-danger btn-lg" data-toggle="tab" href="#drink">Drinks</a></li>
+    <li><a class="btn btn-danger btn-lg" data-toggle="tab" href="#dessert">Desserts</a></li>
+    <li><a class="btn btn-danger btn-lg" data-toggle="tab" href="#appetiser">Appetisers</a></li>
+    <li><a class="btn btn-danger btn-lg" data-toggle="tab" href="#wing">Wings</a></li>
   </ul>
 </div>
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3 tab-content">
+  <div class="col tab-content">
     <div id="pizza" class="tab-pane fade in active">
       <% @products.each do |product| %>
         <% if product.food == 1 %>
@@ -46,7 +46,4 @@
         <% end %>
       <% end %>
     </div>
-    <p id="debug"></p>
-
-  </div>
 </div>

@@ -7,6 +7,8 @@
     </ul>
   </div>
 <% end %>
+<h1>Cart Page</h1>
+<h1 class ="text-center">Review your order before checking out</h1>
 <% if @order_items.size == 0 %>
   <p class="text-center">
     There are no items in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
@@ -15,8 +17,10 @@
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
-  <h4 style="padding-right: 30px" class="text-right">Subtotal: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
- <h4 style="padding-right: 30px" class="text-right">Shipping: <span style="color: green">$10.00</span></h4>
-
-  <li><%= link_to 'Go to Checkout', carts_payment_path, class:"button"%></li> <!-- this should do something -->
+    <div class="well cart-total">
+      <h4 style="padding-right: 30px" class="text-right">Subtotal: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
+      <h4 style="padding-right: 30px" class="text-right">Shipping: <span style="color: green">$10.00</span></h4>
+      <h4 style="padding-right: 30px" class="text-right">Total: <span style="color: green"><%= number_to_currency (@order.subtotal + 10) %></span></h4>
+    </div>
+  <%= link_to 'Go to Checkout', carts_payment_path, class:"btn btn-primary checkout-btn btn-large"%>
 <% end %>

@@ -73,13 +73,21 @@ ul.noPoints {
 .navbar
 {
   max-width: 85.7142857143rem;
-    margin: auto;
+margin: auto;
 }
 body
 {
+  min-height:65rem;
   max-width: 85.7142857143rem;
-    margin: auto;
+  margin: auto;
+
+    background-color: #cccccc;
+      background-image: linear-gradient(white, red);
+      background-repeat:no-repeat;
+      background-size:cover;
+
 }
+
 .container-fluid
 {
   display:inline-block;

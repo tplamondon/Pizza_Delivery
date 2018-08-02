@@ -1,3 +1,5 @@
+<h1 class ="text-center">Payment Page</h1>
+<h1 class ="text-center">Please complete your order</h1>
 <div class="payment-page">
   <div class="payment-form  ">
     <!-- the stuff that works to update location -->
@@ -48,14 +50,13 @@
       <%= form.label(:phoneNumber, "Phone Number") %>
       <%= form.text_field :phoneNumber, :required => true %>
     </div>
-    <div>
-      <%= form.submit "Confirm Payment" %>
-    </div>
+
+
   </div>
-  <% end %>
+
 
   <div>
-    <table> Review Your Orders
+    <table> <h3> Review Your Orders</h1>
       <tr>
         <th>Item Name</th>
         <th>Quantity</th>
@@ -80,6 +81,7 @@
         <td><%=number_to_currency @order.total%></td>
       </tr>
     </table>
+    <%= form.submit "Confirm Payment", class:"btn btn-primary btn-large" %>
   </div>
-</div>
+  <% end %>
 </div>
