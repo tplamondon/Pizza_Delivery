@@ -41,6 +41,7 @@ class Restaurants::RegistrationsController < Devise::RegistrationsController
   #   super
   # end
 
+  # prevent auto log in
   def sign_up(resource_name, resource)
    #sign_in(resource_name, resource)
   end
