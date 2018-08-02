@@ -6,6 +6,7 @@
     <li><a data-toggle="tab" href="#drink">Drinks</a></li>
     <li><a data-toggle="tab" href="#dessert">Desserts</a></li>
     <li><a data-toggle="tab" href="#appetiser">Appetisers</a></li>
+    <li><a data-toggle="tab" href="#wing">Wings</a></li>
   </ul>
 </div>
 <div class="row">
@@ -34,6 +35,13 @@
     <div id="appetiser" class="tab-pane fade">
       <% @products.each do |product| %>
         <% if product.food == 4 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <div id="wing" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 5 %>
           <%= render "product_row", product: product, order_item: @order_item %>
         <% end %>
       <% end %>

@@ -35,6 +35,10 @@ Product.create! id: 15, name: "Spinach Rolls", price: 4.00, active: true, food: 
 Product.create! id: 16, name: "Salad Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Salad.jpg"
 Product.create! id: 17, name: "Bread Sticks", price: 6.50, active: true, food: 4, image_src: "/assets/appetisers/Bread.jpg"
 
+Product.create! id: 18, name: "Chicken Wings", price: 6.00, active: true, food: 5, image_src: "/assets/wings/Chicken.jpg"
+Product.create! id: 19, name: "Turkey Wings", price: 6.00, active: true, food: 5, image_src: "/assets/wings/Turkey.jpg"
+Product.create! id: 20, name: "Spicy Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/Spicy.jpg"
+
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
