@@ -18,7 +18,7 @@ Product.create! id: 1, name: "Ham and Pineapple Pizza", price: 10.00, active: tr
 Product.create! id: 2, name: "Pepperoni Pizza", price: 10.00, active: true, food: 1, image_src: "/assets/pizzas/pepperoni.jpg"
 Product.create! id: 3, name: "Cheese Pizza", price: 8.00, active: true, food: 1, image_src: "/assets/pizzas/cheese.png"
 Product.create! id: 4, name: "Veggie Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/veggie.jpg"
-Product.create! id: 5, name: "Olive and Ham Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/veggie.jpg"
+Product.create! id: 5, name: "Olive and Ham Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/blackolive.jpg"
 Product.create! id: 6, name: "Garlic Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/garlic.jpg"
 
 OrderStatus.delete_all
