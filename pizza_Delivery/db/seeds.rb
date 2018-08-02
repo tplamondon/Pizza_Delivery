@@ -6,6 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
+Restaurant.delete_all
+#Restaurant.create! name: "Admin", email: "admin@sfu.ca", password:"pizzaCanada"
+restaurant = Restaurant.new(:name => 'admin', :email => 'admin@sfu.ca', :password => 'pizzaCanada', :password_confirmation => 'pizzaCanada')
+restaurant.save!
+
 Product.delete_all
 Product.create! id: 1, name: "Ham and Pineapple Pizza", price: 10.00, active: true
 Product.create! id: 2, name: "Pepperoni Pizza", price: 10.00, active: true
@@ -23,8 +30,3 @@ OrderStatus.create! id: 5, name: "Cancelled"
 
 #OrderItem.delete_all
 #Order.delete_all
-
-Restaurant.delete_all
-#Restaurant.create! name: "Admin", email: "admin@sfu.ca", password:"pizzaCanada"
-restaurant = Restaurant.new(:name => 'admin', :email => 'admin@sfu.ca', :password => 'pizzaCanada', :password_confirmation => 'pizzaCanada')
-restaurant.save!
