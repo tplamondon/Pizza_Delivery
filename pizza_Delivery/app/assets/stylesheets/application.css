@@ -36,8 +36,51 @@
 div.toolbar{
   background-color: #d9534f;
 }
-
-
+.navbar-header
+{
+  width:30%;
+}
+.navbar-inverse
+{
+    background-color:#d9534f;
+}
+.navbar-brand
+{
+   margin: none !important;
+   padding-top: .3125rem !important;
+   padding-bottom: .3125rem !important;
+   float:left;
+   position:relative;
+}
+.navbar-brand img
+{
+  width: 45%;
+  height: 120%;
+}
+.navbar-nav
+{
+    flex-direction:row;
+    float:right;
+    position:relative;
+}
+a
+{
+  color:white !important;
+}
 ul.noPoints {
   list-style-type: none;
+}
+.navbar
+{
+  max-width: 85.7142857143rem;
+    margin: auto;
+}
+body
+{
+  max-width: 85.7142857143rem;
+    margin: auto;
+}
+.container-fluid
+{
+  display:inline-block;
 }
