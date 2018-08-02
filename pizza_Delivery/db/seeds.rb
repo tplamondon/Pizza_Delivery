@@ -21,6 +21,11 @@ Product.create! id: 4, name: "Veggie Pizza", price: 12.00, active: true, food: 1
 Product.create! id: 5, name: "Olive and Ham Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/blackolive.jpg"
 Product.create! id: 6, name: "Garlic Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/garlic.jpg"
 
+Product.create! id: 7, name: "Coca Cola", price: 6.00, active: true, food: 2, image_src: "/assets/drinks/Coca-Cola.jpg"
+Product.create! id: 7, name: "Pepsi", price: 6.00, active: true, food: 2, image_src: "/assets/drinks/Pepsi.jpg"
+Product.create! id: 7, name: "Mountain Dew", price: 6.00, active: true, food: 2, image_src: "/assets/drinks/Mountain-Dew.jpg"
+Product.create! id: 7, name: "Dr Pepper", price: 6.50, active: true, food: 2, image_src: "/assets/drinks/DrPepper.jpg"
+
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
