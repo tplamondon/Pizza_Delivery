@@ -26,10 +26,10 @@ Product.create! id: 8, name: "Pepsi", price: 3.00, active: true, food: 2, image_
 Product.create! id: 9, name: "Mountain Dew", price: 3.00, active: true, food: 2, image_src: "/assets/drinks/Mountain-Dew.jpg"
 Product.create! id: 10, name: "Dr Pepper", price: 3.50, active: true, food: 2, image_src: "/assets/drinks/DrPepper.png"
 
-Product.create! id: 11, name: "Vanilla Ice-cream", price: 5.00, active: true, food: 2, image_src: "/assets/desserts/vanilla.jpg"
-Product.create! id: 12, name: "Chocolate Ice-cream", price: 5.00, active: true, food: 2, image_src: "/assets/desserts/chocolate.jpg"
-Product.create! id: 13, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 2, image_src: "/assets/desserts/strawberry.jpg"
-Product.create! id: 14, name: "Applie Pie", price: 7.50, active: true, food: 2, image_src: "/assets/desserts/applePie.jpg"
+Product.create! id: 11, name: "Vanilla Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/vanilla.jpg"
+Product.create! id: 12, name: "Chocolate Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/chocolate.jpg"
+Product.create! id: 13, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/strawberry.jpg"
+Product.create! id: 14, name: "Applie Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
 
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"

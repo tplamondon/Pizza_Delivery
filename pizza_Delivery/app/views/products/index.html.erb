@@ -22,6 +22,13 @@
         <% end %>
       <% end %>
     </div>
+    <div id="dessert" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 3 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
     <p id="debug"></p>
 
   </div>
