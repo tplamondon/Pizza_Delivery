@@ -31,6 +31,10 @@ Product.create! id: 12, name: "Chocolate Ice-cream", price: 5.00, active: true, 
 Product.create! id: 13, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/strawberry.jpg"
 Product.create! id: 14, name: "Applie Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
 
+Product.create! id: 15, name: "Spinach Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Spinnach.jpg"
+Product.create! id: 16, name: "Salad Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Salad.jpg"
+Product.create! id: 17, name: "Bread Sticks", price: 6.50, active: true, food: 4, image_src: "/assets/appetisers/Bread.jpg"
+
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
 OrderStatus.create! id: 2, name: "Placed"
