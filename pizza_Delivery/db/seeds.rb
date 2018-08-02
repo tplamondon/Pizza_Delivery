@@ -10,7 +10,7 @@
 
 Restaurant.delete_all
 #Restaurant.create! name: "Admin", email: "admin@sfu.ca", password:"pizzaCanada"
-restaurant = Restaurant.new(:name => 'admin', :email => 'admin@sfu.ca', :password => 'pizzaCanada', :password_confirmation => 'pizzaCanada')
+restaurant = Restaurant.new(:name => 'admin', :email => 'admin@sfu.ca', :password => 'pizzaCanada', :password_confirmation => 'pizzaCanada', :phoneNumber => "111-111-1111")
 restaurant.save!
 
 Product.delete_all
