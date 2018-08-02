@@ -1,13 +1,28 @@
 <h3 class="text-center">Products for Sale</h3>
 
-
+<div class="container" style="width: 50%">
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#pizza">Pizza's</a></li>
+    <li><a data-toggle="tab" href="#drink">Drinks</a></li>
+  </ul>
+</div>
 <div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <p id="debug"></p>
-    <% @products.each do |product| %>
-      <% if product.food == 1 %>
-        <%= render "product_row", product: product, order_item: @order_item %>
+  <div class="col-xs-6 col-xs-offset-3 tab-content">
+    <div id="pizza" class="tab-pane fade in active">
+      <% @products.each do |product| %>
+        <% if product.food == 1 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
+    <div id="drink" class="tab-pane fade">
+      <% @products.each do |product| %>
+        <% if product.food == 2 %>
+          <%= render "product_row", product: product, order_item: @order_item %>
+        <% end %>
+      <% end %>
+    </div>
+    <p id="debug"></p>
+
   </div>
 </div>
