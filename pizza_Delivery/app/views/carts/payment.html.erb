@@ -19,7 +19,7 @@
       <% end %>
     <div>
       <%= form.label(:name, "Name on card") %>
-      <%= form.text_field :name, :required => true %>
+      <%= form.text_field :name, :required => true, :value => current_user.name %>
     </div>
     <div>
       <%= form.label(:bill_address, "Billing Address") %>
