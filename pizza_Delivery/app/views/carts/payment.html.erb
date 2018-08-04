@@ -27,15 +27,15 @@
     </div>
     <div>
       <%= form.label(:city, "City") %>
-      <%= form.text_field :city, :required => true %>
+      <%= form.text_field :city, :required => true, value => current_user.city %>
     </div>
     <div>
       <%= form.label(:province, "Province") %>
-      <%= form.text_field :province, :required => true %>
+      <%= form.text_field :province, :required => true, value => current_user.province %>
     </div>
     <div>
       <%= form.label(:location, "Postal Code") %>
-      <%= form.text_field :location, :required => true %>
+      <%= form.text_field :location, :required => true. value => current_user.zipCode %>
     </div>
     <div>
       <%= form.label(:cardNumber, "Card Number") %>
