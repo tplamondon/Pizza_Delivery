@@ -12,6 +12,7 @@ class Order < ActiveRecord::Base
 private
   def set_order_status
     self.order_status_id = 1
+    self.userId = Current.user.id
   end
 
   def update_subtotal
