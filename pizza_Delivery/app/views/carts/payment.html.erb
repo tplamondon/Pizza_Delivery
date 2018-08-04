@@ -23,19 +23,19 @@
     </div>
     <div>
       <%= form.label(:bill_address, "Billing Address") %>
-      <%= form.text_field :bill_address, :required => true %>
+      <%= form.text_field :bill_address, :required => true, :value => current_user.streetAddress %>
     </div>
     <div>
       <%= form.label(:city, "City") %>
-      <%= form.text_field :city, :required => true, value => current_user.city %>
+      <%= form.text_field :city, :required => true, :value => current_user.city %>
     </div>
     <div>
       <%= form.label(:province, "Province") %>
-      <%= form.text_field :province, :required => true, value => current_user.province %>
+      <%= form.text_field :province, :required => true, :value => current_user.province %>
     </div>
     <div>
       <%= form.label(:location, "Postal Code") %>
-      <%= form.text_field :location, :required => true. value => current_user.zipCode %>
+      <%= form.text_field :location, :required => true, :value => current_user.zipCode %>
     </div>
     <div>
       <%= form.label(:cardNumber, "Card Number") %>
