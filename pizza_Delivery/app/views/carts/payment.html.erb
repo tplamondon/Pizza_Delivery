@@ -83,7 +83,11 @@
         <td><%=number_to_currency @order.total%></td>
       </tr>
     </table>
-    <%= form.submit "Confirm Payment", class:"btn btn-primary btn-large" %>
+    <%= form_for @order, remote: true do |f| %>
+    <%= f.hidden_field :order_status_id, value: 2 %>
+    <%= f.submit "Confirm Payment", class: "btn btn-danger" %>
+    <% end %>
+
   </div>
   <% end %>
 </div>
