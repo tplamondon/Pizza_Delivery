@@ -31,9 +31,9 @@ class ApplicationController < ActionController::Base
 
   def current_order
     # try catch in case order gets deleted that user is using, avoid a crash
-    begin
-      if !session[:order_id].nil?
-        Order.find(session[:order_id])
+  begin
+      if Order.exists?(order_status_id: [1], userId: [Current.user.id])
+        Order.where(order_status_id: [1], userId: [Current.user.id]).first
       else
         Order.new
       end
