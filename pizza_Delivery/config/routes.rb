@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  devise_for :drivers
   get 'order_status/index'
   get 'order_status/inProgress'
   get 'order_status/placed'

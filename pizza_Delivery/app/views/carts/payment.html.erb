@@ -1,9 +1,8 @@
-<h1 class ="text-center">Payment Page</h1>
-<h1 class ="text-center">Please complete your order</h1>
+<h1 class ="text-center">Please review and complete your order</h1>
 <div class="payment-page">
   <div class="payment-form  ">
     <!-- the stuff that works to update location -->
-    <%= form_with(model: current_order, local: true) do |form| %>
+<%= form_with(model: current_order, local: true) do |form| %>
     <h3>Billing Information</h3>
       <% if current_order.errors.any? %>
       <div id="error_explanation">
@@ -20,23 +19,23 @@
       <% end %>
     <div>
       <%= form.label(:name, "Name on card") %>
-      <%= form.text_field :name, :required => true %>
+      <%= form.text_field :name, :required => true, :value => current_user.name %>
     </div>
     <div>
       <%= form.label(:bill_address, "Billing Address") %>
-      <%= form.text_field :bill_address, :required => true %>
+      <%= form.text_field :bill_address, :required => true, :value => current_user.streetAddress %>
     </div>
     <div>
       <%= form.label(:city, "City") %>
-      <%= form.text_field :city, :required => true %>
+      <%= form.text_field :city, :required => true, :value => current_user.city %>
     </div>
     <div>
       <%= form.label(:province, "Province") %>
-      <%= form.text_field :province, :required => true %>
+      <%= form.text_field :province, :required => true, :value => current_user.province %>
     </div>
     <div>
       <%= form.label(:location, "Postal Code") %>
-      <%= form.text_field :location, :required => true %>
+      <%= form.text_field :location, :required => true, :value => current_user.zipCode %>
     </div>
     <div>
       <%= form.label(:cardNumber, "Card Number") %>
@@ -53,7 +52,9 @@
     <div>
       <%= form.hidden_field :userId, :required => true, :value => current_user.id %>
     </div>
-
+    <%= form.hidden_field :order_status_id, value: 2 %>
+    <%= form.submit "Confirm Payment", class: "btn btn-danger" %>
+<% end %>
 
   </div>
 
@@ -84,7 +85,7 @@
         <td><%=number_to_currency @order.total%></td>
       </tr>
     </table>
-    <%= form.submit "Confirm Payment", class:"btn btn-primary btn-large" %>
+
   </div>
-  <% end %>
+
 </div>

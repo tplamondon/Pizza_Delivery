@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Users::RegistrationsController < Devise::RegistrationsController
+class Drivers::RegistrationsController < Devise::RegistrationsController
   include Accessible
   skip_before_action :check_user, except: [:new, :create]
   before_action :configure_sign_up_params, only: [:create]
@@ -44,12 +44,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :streetAddress, :city, :province, :zipCode, :name])
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute, :name, :phoneNumber])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :streetAddress, :city, :province, :zipCode, :name])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute, :name, :phoneNumber])
   end
 
   # The path used after sign up.
