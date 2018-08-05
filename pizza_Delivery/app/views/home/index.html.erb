@@ -8,7 +8,9 @@
     <div class="col">
 
       <%= link_to 'Info', home_about_path, class:"btn btn-danger btn-lg"%>
-      <%= link_to 'Menu', products_path, class:"btn btn-danger btn-lg" %>
+      <% if !driver_signed_in? %>
+        <%= link_to 'Menu', products_path, class:"btn btn-danger btn-lg" %>
+      <% end %>
       <%= link_to 'About Us', pizza_canada_info_path, class:"btn btn-danger btn-lg" %> <!--Need to update link-->
       <%= link_to 'Store Locator', products_path, class:"btn btn-danger btn-lg" %>
       <img src="/assets/Another-Promo.jpg" width="100%" height="auto"></img>

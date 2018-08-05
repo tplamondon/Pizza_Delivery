@@ -19,6 +19,27 @@ class ApplicationController < ActionController::Base
       end
   end
 
+  def authenticate_customer!
+      # i'm allowing restaurant this authentication
+      # because they should have all privileges a customer does
+      if restaurant_signed_in?
+          true
+      elsif user_signed_in?
+        true
+      else
+          authenticate_user!
+      end
+  end
+
+  def authenticate_restaurant!
+      # if we're a restaurant, good
+      if restaurant_signed_in?
+          true
+      else
+          authenticate_user!
+      end
+  end
+
   protect_from_forgery with: :exception
   helper_method :current_order
 
