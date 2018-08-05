@@ -20,11 +20,12 @@
   </head>
 
   <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
   <div class="container-fluid">
-    <div class="navbar-header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <span class="navbar-header">
       <a class="navbar-brand" href="/home/index"><img src="/assets/logo_full.png"></img></a>
-    </div>
+    </span>
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
           <li>
@@ -71,8 +72,9 @@
         </ul>
       <% end %>
     </ul>
+    </nav>
   </div>
-</nav>
+
 <div style="height: 63px;">
 </div>
     <!-- Toolbar -->
