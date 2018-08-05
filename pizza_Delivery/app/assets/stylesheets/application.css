@@ -31,6 +31,11 @@
 {
   background-color: #bd2130;
 }
+.placeholderdiv
+{
+  height: 43px;
+
+}
 .customContainer
 {
   max-width: 85.7142857143rem;
