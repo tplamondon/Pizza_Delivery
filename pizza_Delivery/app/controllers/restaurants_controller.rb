@@ -13,7 +13,12 @@ class RestaurantsController < ApplicationController
   end
 
   def show
-    @restaurant = Restaurant.find(params[:id])
+    # in case someone tries some funny URL stuff and the thing doesn't exist
+    begin
+      @restaurant = Restaurant.find(params[:id])
+    rescue => ex
+      redirect_to restaurants_path
+    end
   end
 
   def new
