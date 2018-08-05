@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
       if Order.exists?(order_status_id: [1], userId: [Current.user.id])
         Order.where(order_status_id: [1], userId: [Current.user.id]).first
       else
-        Order.new
+        Order.new(:order_status_id => 1, :userId => [Current.user.id] )
       end
     rescue => ex
       Order.new

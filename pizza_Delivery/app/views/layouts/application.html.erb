@@ -20,14 +20,11 @@
   </head>
 
   <body>
-
-  <!-- the navbar div -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
-    <!-- the navbar SHOULD have been inside the container -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-    <span class="navbar-header">
+    <div class="navbar-header">
       <a class="navbar-brand" href="/home/index"><img src="/assets/logo_full.png"></img></a>
-    </span>
+    </div>
     <ul class="nav navbar-nav">
       <% if user_signed_in? %>
           <li>
@@ -40,7 +37,7 @@
             <%= link_to('View Orders', order_status_index_path, :class => 'navbar-link') %>
           </li>
           <li>
-            <%= render 'layouts/cart_text' %>
+            <h1 class="cart-text carttext"><%= render 'layouts/cart_text' %></h1>
           </li>
       <% elsif restaurant_signed_in? %>
            <ul class="nav">
@@ -60,10 +57,24 @@
                <%= link_to('View admins', restaurants_path, :class => 'navbar-link') %>
              </li>
            </ul>
+
+      <% elsif driver_signed_in? %>
+          <li>
+            <%= link_to 'Edit profile', edit_driver_registration_path, :class => 'navbar-link' %>
+          </li>
+          <li>
+            <%= link_to('Logout', destroy_driver_session_path,:class => 'navbar-link',  method: :delete) %>
+          </li>
+          <li>
+            <%= link_to('View Orders', order_status_index_path, :class => 'navbar-link') %>
+          </li>
+          <li>
+            <%= render 'layouts/cart_text' %>
+          </li>
       <% else %>
       <ul class="nav">
           <li>
-            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %>
+            <%= link_to "Sign up", home_regis_path, :class => 'navbar-link'  %>
           </li>
           <li>
             <%= link_to('Login', new_user_session_path)  %>
@@ -74,9 +85,8 @@
         </ul>
       <% end %>
     </ul>
-    </nav>
   </div>
-
+</nav>
 <div class="placeholderdiv">
 </div>
     <!-- Toolbar -->

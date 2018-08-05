@@ -3,7 +3,8 @@ class HomeController < ApplicationController
 
   def about
   end
-
+  def regis
+  end
   def index
   end
 end
