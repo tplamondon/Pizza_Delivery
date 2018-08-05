@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_04_201420) do
+ActiveRecord::Schema.define(version: 2018_08_05_004549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,7 +61,16 @@ ActiveRecord::Schema.define(version: 2018_08_04_201420) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "userId"
+    t.string "streetAddress"
+    t.string "city"
+    t.string "province"
+    t.integer "foodRating"
+    t.integer "driverRating"
+    t.bigint "store_id"
+    t.bigint "driver_id"
+    t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+    t.index ["store_id"], name: "index_orders_on_store_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -93,6 +102,15 @@ ActiveRecord::Schema.define(version: 2018_08_04_201420) do
     t.index ["reset_password_token"], name: "index_restaurants_on_reset_password_token", unique: true
   end
 
+  create_table "stores", force: :cascade do |t|
+    t.string "street_address"
+    t.string "city"
+    t.string "province"
+    t.string "zipCode"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -117,5 +135,7 @@ ActiveRecord::Schema.define(version: 2018_08_04_201420) do
 
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "order_statuses"
+  add_foreign_key "orders", "stores"
 end
