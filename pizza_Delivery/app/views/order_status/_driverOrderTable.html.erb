@@ -1,0 +1,25 @@
+<div class="container">
+
+  <table class="table">
+    <tr>
+      <th>Order Location</th>
+      <th>Order Total</th>
+      <th>Created</th>
+      <th>Order</th>
+      <th>Update Status</th>
+      <th>Delete</th>
+
+    </tr>
+    <% @orders.each do |o| %>
+      <tr>
+        <td><%= o.location %></td>
+        <td>$<%= o.subtotal %></td> <!-- should this be total? -->
+        <td><%= o.created_at %></td>
+        <td><%= link_to 'Show', order_path(o) %></td>
+      <% end %>
+    </tr>
+  </table>
+
+
+  <%= link_to 'Back', order_status_index_path %>
+</div>
