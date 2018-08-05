@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_05_003024) do
+ActiveRecord::Schema.define(version: 2018_08_05_004549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,11 @@ ActiveRecord::Schema.define(version: 2018_08_05_003024) do
     t.string "province"
     t.integer "foodRating"
     t.integer "driverRating"
+    t.bigint "store_id"
+    t.bigint "driver_id"
+    t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
+    t.index ["store_id"], name: "index_orders_on_store_id"
   end
 
   create_table "products", force: :cascade do |t|
@@ -131,5 +135,7 @@ ActiveRecord::Schema.define(version: 2018_08_05_003024) do
 
   add_foreign_key "order_items", "orders"
   add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "drivers"
   add_foreign_key "orders", "order_statuses"
+  add_foreign_key "orders", "stores"
 end
