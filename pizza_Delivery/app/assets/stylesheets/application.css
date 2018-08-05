@@ -41,6 +41,11 @@
   max-width: 85.7142857143rem;
   margin: auto;
 }
+.container
+{
+  max-width: 100%;
+
+}
 
 div.toolbar{
   background-color: #d9534f;

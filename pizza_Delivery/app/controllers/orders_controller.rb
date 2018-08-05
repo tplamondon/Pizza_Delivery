@@ -18,12 +18,6 @@ class OrdersController < ApplicationController
     @order_status = OrderStatus.all
   end
 
-  def place
-    @order = Order.find(params[:id])
-    @order.update_attributes(order_params)
-
-  end
-
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
