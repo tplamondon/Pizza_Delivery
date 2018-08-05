@@ -16,8 +16,8 @@ USAGE="Usage: $0 <start|stop|restart|upgrade|rotate|force-stop>"
 
 # app settings
 USER="vagrant"
-APP_NAME="pizza_Delivery"
-APP_ROOT="/home/$USER/project/$APP_NAME"
+APP_NAME="pizza_delivery"
+APP_ROOT="/home/$USER/$APP_NAME"
 ENV="production"
 
 # environment settings

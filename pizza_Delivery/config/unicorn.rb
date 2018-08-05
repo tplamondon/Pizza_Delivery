@@ -1,13 +1,20 @@
-app_dir = "/home/vagrant/project/pizza_Delivery"
-shared_dir = "/home/vagrant"
+# set path to application
+app_dir = File.expand_path("../..", __FILE__)
+shared_dir = "#{app_dir}/shared"
 working_directory app_dir
 
+
+# Set unicorn options
 worker_processes 2
 preload_app true
 timeout 30
 
-listen "/tmp/unicorn.sock", :backlog => 64
+# Set up socket location
+listen "#{shared_dir}/sockets/unicorn.sock", :backlog => 64
 
-stderr_path "#{shared_dir}/unicorn.stderr.log"
-stdout_path "#{shared_dir}/unicorn.stdout.log"
-pid "#{shared_dir}/unicorn.pid"
+# Logging
+stderr_path "#{shared_dir}/log/unicorn.stderr.log"
+stdout_path "#{shared_dir}/log/unicorn.stdout.log"
+
+# Set master PID location
+pid "#{shared_dir}/pids/unicorn.pid"
