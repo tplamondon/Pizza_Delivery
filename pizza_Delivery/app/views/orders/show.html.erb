@@ -29,6 +29,7 @@
   </table>
 
   <% if driver_signed_in? %>
+   <% if @order.order_status_id.to_i == 2 %>
   <div>
     <%= form_with(model: @order, local: true) do |form| %>
     <%= form.hidden_field :driver_id, value:  @driver.id %>
@@ -36,5 +37,14 @@
     <%= form.submit "Take this delivery",class: "btn btn-danger" %>
     <% end %>
   </div>
+   <% elsif @order.order_status_id.to_i == 3 %>
+   <div>
+     <%= form_with(model: @order, local: true) do |form| %>
+     <%= form.hidden_field :driver_id, value:  @driver.id %>
+     <%= form.hidden_field :order_status_id, value: 4 %>
+     <%= form.submit "Complete Delivery",class: "btn btn-danger" %>
+     <% end %>
+   </div>
+   <%end%>
   <% end %>
 </div>
