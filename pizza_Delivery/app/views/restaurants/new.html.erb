@@ -2,6 +2,7 @@
 
 <!-- https://stackoverflow.com/questions/24875403/only-allow-admin-user-to-create-new-users-in-rails-with-devise-no-external-modu -->
 <div class="container">
+  <h2>Create a new restaurant admin</h2>
   <%= form_with scope: :restaurant, url: create_restaurant_path do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
@@ -18,6 +19,7 @@
   <% end %>
 
   <div class="field">
+    <!-- still hidden by navbar -->
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
