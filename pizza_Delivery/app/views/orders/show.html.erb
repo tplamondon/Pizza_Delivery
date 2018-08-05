@@ -7,6 +7,7 @@
     <li><p>Shipping: $10</p></li>
     <li><p>Total: $<%= @order.subtotal + 10%></p></li>
     <li><p>Location: <%= @order.location %></p></li>
+    <li><p>Status: <%= @order.order_status_id %></p></li>
   </ul>
 
   <h3>Items</h3>
@@ -27,4 +28,13 @@
     </tr>
   </table>
 
+  <% if driver_signed_in? %>
+  <div>
+    <%= form_with(model: @order, local: true) do |form| %>
+    <%= form.hidden_field :driver_id, value:  @driver.id %>
+    <%= form.hidden_field :order_status_id, value: 3 %>
+    <%= form.submit "Take this delivery",class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  <% end %>
 </div>

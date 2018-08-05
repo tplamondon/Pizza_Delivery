@@ -2,4 +2,8 @@
 <div class="container">
   <h1>Completed</h1>
 </div>
+ <% if driver_signed_in? %>
+ <%= render "driverOrderTable" %>
+ <% else %>
   <%= render "orderTable" %>
+<% end %>

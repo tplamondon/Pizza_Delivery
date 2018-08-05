@@ -32,7 +32,7 @@ class OrderStatusController < ApplicationController
     elsif restaurant_signed_in?
       @orders = Order.all.where(order_status_id: [3])
     elsif driver_signed_in?
-      @orders = Order.all.where(order_status_id: [3], driver_id: [current_user.id])
+      @orders = Order.all.where(order_status_id: [3], driver_id: [current_driver.id])
     else
     end
   end
@@ -43,7 +43,7 @@ class OrderStatusController < ApplicationController
     elsif restaurant_signed_in?
       @orders = Order.all.where(order_status_id: [4])
     elsif driver_signed_in?
-      @orders = Order.all.where(order_status_id: [4], driver_id: [current_user.id])
+      @orders = Order.all.where(order_status_id: [4], driver_id: [current_driver.id])
     else
     end
   end

@@ -3,6 +3,6 @@
 <div class="container">
   <h1>In Progress</h1>
 </div>
-<% if user_signed_in? %>
+<% if !driver_signed_in? %>
   <%= render "orderTable" %>
 <% end %>

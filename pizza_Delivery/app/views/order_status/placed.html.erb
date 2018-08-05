@@ -3,4 +3,8 @@
 <div class="container">
   <h1>Placed</h1>
 </div>
-<%= render "orderTable" %>
+<% if driver_signed_in? %>
+<%= render "driverOrderTable" %>
+<% else %>
+ <%= render "orderTable" %>
+<% end %>

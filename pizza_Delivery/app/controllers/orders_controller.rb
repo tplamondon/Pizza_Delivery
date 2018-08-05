@@ -1,6 +1,9 @@
 class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
+    if driver_signed_in?
+        @driver = current_driver
+    end
   end
 
   def index
@@ -28,6 +31,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:location, :order_status_id, :userId)
+      params.require(:order).permit(:location, :order_status_id, :userId, :driver_id)
     end
 end
