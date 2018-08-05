@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
       elsif user_signed_in?
         true
       # else, authetnicate
+      elsif driver_signed_in?
+        true
       else
           authenticate_user!
       end

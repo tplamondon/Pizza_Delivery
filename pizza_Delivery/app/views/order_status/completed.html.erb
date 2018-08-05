@@ -2,4 +2,7 @@
 <div class="container">
   <h1>Completed</h1>
 </div>
-<%= render "orderTable" %>
+<% if user_signed_in? %>
+  <%= render "orderTable" %>
+<% else %>
+<% end %>

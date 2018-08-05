@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get 'pizza_canada/info'
   get 'home/about'
   get 'home/index'
+  get 'home/regis'
 
   # doesn't work for some reason???
   # here maybe? https://stackoverflow.com/questions/19057217/uninitialized-constant-sessionscontroller-in-api/19058081
