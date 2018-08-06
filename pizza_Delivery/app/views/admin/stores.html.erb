@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>Admin Tools</h1>
+  <div class ="row">
+    <%= form_tag(admin_stores_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :id, params[:id], placeholder: "Search Driver ID", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_stores_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :street_address, params[:street_address], placeholder: "Search by Full Street Address", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_stores_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :city, params[:city], placeholder: "Search by city", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_stores_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :province, params[:province], placeholder: "Search by Province", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_stores_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :zipCode, params[:zipCode], placeholder: "Search by Postal Code", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+
+    <h3>Search Result</h3>
+    <table class="table">
+      <tr>
+        <th>Store ID</th>
+        <th>Store Name</th>
+        <th>Store Email</th>
+        <th>Store Phone Number</th>
+        <th>Date Created</th>
+      </tr>
+      <%if @stores.size != 0 %>
+        <% @stores.each do |o| %>
+          <tr>
+            <td><%= o.id %></td>
+            <td><%= o.name %></td>
+            <td><%= o.email %></td>
+            <td><%= o.phoneNumber %></td>
+            <td><%= o.created_at %></td>
+          </tr>
+        <% end %>
+    <% end %>
+
+  </table>
+</div>
+
+</div>

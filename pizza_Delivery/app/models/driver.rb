@@ -1,8 +1,8 @@
 class Driver < ApplicationRecord
   scope :id, -> (id) { where id: id }
-  scope :email, -> (id) { where email: email }
-  scope :dname, -> (id) { where name: id }
-  scope :phoneNumber, -> (id) { where phoneNumber: id }
+  scope :email, -> (email) { where email: email }
+  scope :pname, -> (name) { where name: name }
+  scope :phoneNumber, -> (phoneNumber) { where phoneNumber: phoneNumber }
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
