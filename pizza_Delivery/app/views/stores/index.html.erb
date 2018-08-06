@@ -6,4 +6,8 @@
     <%= render "store_row", store: store, current_order: @order %>
   <% end %>
 
+  <% if restaurant_signed_in? %>
+    <%= link_to 'New', new_store_path %>
+  <% end %>
+
 </div>

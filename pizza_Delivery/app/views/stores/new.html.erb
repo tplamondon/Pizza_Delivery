@@ -1,6 +1,6 @@
 <div class="container">
   <h2>Create a new store</h2>
-  <%= form_with scope: :store, url: create_store_path do |f| %>
+  <%= form_with scope: :store, url: stores_path do |f| %>
   <% if @store.errors.any? %>
     <div id="error_explanation">
       <h2>

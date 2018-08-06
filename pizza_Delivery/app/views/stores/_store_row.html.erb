@@ -1,17 +1,20 @@
 <div class="row well">
     <div class="col">
-      <h4><%= store.streetAddress %></h4>
+      <h4><%= store.street_address %></h4>
       <h4><%= store.city %></h4>
       <h4><%= store.province %></h4>
       <h4><%= store.zipCode %></h4>
     </div>
 
     <div class="col">
-      <%= form_for order, remote: true do |f| %>
+      <%= form_for store, remote: true do |f| %>
         <div class="input-group">
           <div class="input-group-btn">
             <%= f.hidden_field :store_id, value: store.id %>
             <%= f.submit "Select Store", class: "btn btn-danger" %>
+            <% if restaurant_signed_in? %>
+              <%= link_to "Delete", store_path(store), method: :delete, class: "btn btn-danger" %>
+            <% end %>
           </div>
         </div>
       <% end %>
