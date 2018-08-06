@@ -18,6 +18,7 @@
   <table class="table">
     <tr>
       <th>Delivery Address</th>
+      <th>Delivering Store</th>
       <th>Created</th>
       <% if user_signed_in? %>
       <th>Order Status</th>
@@ -35,6 +36,7 @@
     <% @orders.each do |o| %>
       <tr>
         <td><%= o.streetAddress %></td>
+        <td><%= o.store_id %></td>
         <td><%= Time.at(o.created_at).in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%y %I:%M %p") %></td>
         <% if user_signed_in? %>
           <% if o.order_status_id.to_i == 2 %>
