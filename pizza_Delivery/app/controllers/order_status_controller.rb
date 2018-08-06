@@ -22,6 +22,7 @@ class OrderStatusController < ApplicationController
   def placed
     if user_signed_in?
       @orders = Order.all.where(order_status_id: [2, 3], userId: [current_user.id])
+      @stores = Store.all.where(store_id: [current_order.store_id])
     elsif restaurant_signed_in?
       @orders = Order.all.where(order_status_id: [2])
     elsif driver_signed_in?
