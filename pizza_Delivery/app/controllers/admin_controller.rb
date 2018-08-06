@@ -1,8 +1,6 @@
 class AdminController < ApplicationController
 before_action :authenticate_restaurant!, :only => [:index, :orders, :restaurants, :products, :stores, :drivers, :customers]
 
-  def index
-  end
   def orders
     @orders = Order.where(nil) # creates an anonymous scope
     @orders = @orders.id(params[:id]) if params[:id].present?
