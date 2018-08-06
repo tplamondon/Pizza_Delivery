@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   scope :store_id, -> (store_id) { where store_id: store_id }
   scope :foodRating, -> (foodRating) { where foodRating: foodRating }
   scope :driverRating, -> (driverRating) { where driverRating: driverRating }
+  scope :order_status_id, -> (order_status_id) { where order_status_id: order_status_id }
 
   belongs_to :order_status
   has_many :order_items, :dependent => :delete_all # https://stackoverflow.com/questions/37025885/rails-cannot-delete-or-update-a-parent-row-a-foreign-key-constraint-fails

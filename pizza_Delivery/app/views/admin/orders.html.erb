@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Admin Tools</h1>
+  <div class ="row">
     <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
       <div class="input-group">
         <%= search_field_tag :id, params[:id], placeholder: "Search Order ID", class: "form-control" %>
@@ -48,6 +49,16 @@
         </div>
       </div>
     <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :driverRating, params[:driverRating], placeholder: "Search by Order status(1-4)", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
     <h3>Search Result</h3>
     <table class="table">
       <tr>
@@ -74,5 +85,5 @@
         </tr>
     <% end %>
   </table>
-
+</div>
 </div>

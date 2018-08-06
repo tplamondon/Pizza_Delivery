@@ -14,10 +14,17 @@ before_action :authenticate_restaurant!, :only => [:index]
     @orders = @orders.store_id(params[:store_id]) if params[:store_id].present?
     @orders = @orders.foodRating(params[:foodRating]) if params[:foodRating].present?
     @orders = @orders.driverRating(params[:driverRating]) if params[:driverRating].present?
+    @orders = @orders.order_status_id(params[:order_status_id]) if params[:order_status_id].present?
   end
   def restaurants
   end
   def products
+    @products = Product.where(nil) # creates an anonymous scope
+    @products = @products.id(params[:id]) if params[:id].present?
+    @products = @products.pname(params[:name]) if params[:name].present?
+    @products = @products.price(params[:price]) if params[:price].present?
+    @products = @products.food(params[:food]) if params[:food].present?
+
   end
   def stores
   end
