@@ -29,6 +29,7 @@ before_action :authenticate_restaurant!, :only => [:index, :orders, :restaurants
   end
   def stores
     @stores = Store.where(nil) # creates an anonymous scope
+    @stores = @stores.id(params[:id]) if params[:id].present?
     @stores = @stores.street_address(params[:street_address]) if params[:street_address].present?
     @stores = @stores.city(params[:city]) if params[:city].present?
     @stores = @stores.province(params[:province]) if params[:province].present?
