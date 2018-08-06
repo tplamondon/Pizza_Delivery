@@ -25,6 +25,7 @@
       <% end %>
       <th>Total</th>
       <th>Order</th>
+      <th>View Order</th>
       <% if restaurant_signed_in? %>
       <th>Customer ID</th>
       <th>Driver ID</th>
@@ -37,7 +38,7 @@
       <tr>
         <td><%= o.streetAddress %></td>
         <% begin %>
-          <td><%= o.store_id %></td>
+          <td><%= o.store_id.street_address %></td>
         <% rescue => ex %>
           <td>No store selected</td>
         <% end %>
