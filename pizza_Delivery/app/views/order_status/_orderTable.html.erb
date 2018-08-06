@@ -6,9 +6,11 @@
       <th>Order Total</th>
       <th>Created</th>
       <th>Order</th>
+      <!-- see below
       <% if user_signed_in? %>
       <th>Order Status</th>
       <% end %>
+      -->
       <% if restaurant_signed_in? %>
       <th>Update Status</th>
       <th>Delete</th>
@@ -21,9 +23,11 @@
         <td>$<%= o.subtotal %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
         <td><%= link_to 'Show', order_path(o) %></td>
+        <!-- User's should not have acess to update status of orders
         <% if user_signed_in? %>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
         <% end %>
+        -->
         <% if restaurant_signed_in? %>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
         <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
