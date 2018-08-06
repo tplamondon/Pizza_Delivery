@@ -22,6 +22,8 @@
       <th>Order Total</th>
       <th>Order</th>
       <% if restaurant_signed_in? %>
+      <th>Customer</th>
+      <th>Driver</th>
       <th>Update Status</th>
       <th>Delete</th>
       <% end %>
@@ -34,6 +36,8 @@
         <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
         <td><%= link_to 'Show', order_path(o) %></td>
         <% if restaurant_signed_in? %>
+        <td><%= o.userId %></td>
+        <td><%= o.driver_id %></td>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
         <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
         <% end %>

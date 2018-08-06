@@ -68,7 +68,16 @@
                <%= link_to('Logout', destroy_restaurant_session_path,:class => 'btn-danger whitetext', method: :delete, ) %>
              </li>
              <li>
-               <%= link_to('View Orders', order_status_index_path, :class => 'btn-danger whitetext') %>
+               <div class="dropdown">
+                <button class="btn btn-danger dropdown-toggle navigation-button" type="button" data-toggle="dropdown">View Orders
+                <span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                  <!-- This is orders currently being delivered, I'm just naming the button this way as it's a good name-->
+                  <li><%= link_to 'Current Orders', order_status_shipped_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to 'Placed Orders', order_status_placed_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to 'Past Orders', order_status_completed_path, :class => 'navbar-link' %></li>
+               </ul>
+              </div>
              </li>
       <% elsif driver_signed_in? %>
           <li>
@@ -82,7 +91,16 @@
            </div>
           </li>
           <li>
-            <%= link_to('View Orders', order_status_index_path, :class => 'btn-danger whitetext') %>
+            <div class="dropdown">
+             <button class="btn btn-danger dropdown-toggle navigation-button" type="button" data-toggle="dropdown">View Orders
+             <span class="caret"></span></button>
+             <ul class="dropdown-menu">
+               <!-- Current order is the one they are shipping-->
+               <li><%= link_to 'Current Order', order_status_shipped_path, :class => 'navbar-link' %></li>
+               <li><%= link_to 'Placed Orders', order_status_placed_path, :class => 'navbar-link' %></li>
+               <li><%= link_to 'Past Orders', order_status_completed_path, :class => 'navbar-link' %></li>
+            </ul>
+           </div>
           </li>
       <% else %>
           <li>
