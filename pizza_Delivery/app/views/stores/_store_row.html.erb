@@ -7,5 +7,13 @@
     </div>
 
     <div class="col">
+      <%= form_for order, remote: true do |f| %>
+        <div class="input-group">
+          <div class="input-group-btn">
+            <%= f.hidden_field :store_id, value: store.id %>
+            <%= f.submit "Select Store", class: "btn btn-danger" %>
+          </div>
+        </div>
+      <% end %>
     </div>
 </div>
