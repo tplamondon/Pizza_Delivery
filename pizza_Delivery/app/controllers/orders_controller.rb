@@ -23,7 +23,7 @@ class OrdersController < ApplicationController
 
   def edit
     @order = Order.find(params[:id])
-    @order_status = OrderStatus.all
+    @order_status = OrderStatus.all.where.not(id: [1])
   end
 
   def update
