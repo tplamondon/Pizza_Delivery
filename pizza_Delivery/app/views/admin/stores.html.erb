@@ -48,18 +48,20 @@
     <table class="table">
       <tr>
         <th>Store ID</th>
-        <th>Store Name</th>
-        <th>Store Email</th>
-        <th>Store Phone Number</th>
+        <th>Street Address</th>
+        <th>City</th>
+        <th>Province</th>
+        <th>Postal Code</th>
         <th>Date Created</th>
       </tr>
       <%if @stores.size != 0 %>
         <% @stores.each do |o| %>
           <tr>
             <td><%= o.id %></td>
-            <td><%= o.name %></td>
-            <td><%= o.email %></td>
-            <td><%= o.phoneNumber %></td>
+            <td><%= o.street_address %></td>
+            <td><%= o.city %></td>
+            <td><%= o.province %></td>
+            <td><%= o.zipCode %></td>
             <td><%= o.created_at %></td>
           </tr>
         <% end %>
