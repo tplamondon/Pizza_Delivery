@@ -1,10 +1,9 @@
 
 
 <div class="container">
-  <h1>Shipped</h1>
 </div>
 <% if driver_signed_in? %>
 <%= render "driverOrderTable" %>
-<% else %>
+<% elsif restaurant_signed_in? %>
  <%= render "orderTable" %>
 <% end %>

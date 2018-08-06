@@ -22,8 +22,8 @@
       <%= form.text_field :name, :required => true, :value => current_user.name %>
     </div>
     <div>
-      <%= form.label(:bill_address, "Billing Address") %>
-      <%= form.text_field :bill_address, :required => true, :value => current_user.streetAddress %>
+      <%= form.label(:streetAddress, "Delivery Address") %>
+      <%= form.text_field :streetAddress, :required => true, :value => current_user.streetAddress %>
     </div>
     <div>
       <%= form.label(:city, "City") %>

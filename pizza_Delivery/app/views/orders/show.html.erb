@@ -2,7 +2,11 @@
 
 <div class="container">
   <h1>Order # <%= @order.id %> </h1>
-  <p>Delivery address: <%= @order.location %></p>
+  <p>Delivery address: <%= @order.streetAddress %></p>
+  <p>City: <%= @order.city %></p>
+  <p>Province: <%= @order.province %></p>
+  <p>Postal Code: <%= @order.location %></p>
+
 <% if @order.order_status_id.to_i == 2 %>
   <p>Order Status: Awaiting Driver Confirmation</p>
 <% elsif @order.order_status_id.to_i == 3%>
@@ -25,11 +29,11 @@
       <%end%>
   <%end%>
 <% end %>
-<% if driver_signed_in?  && @currentOrder.size != 0 %>
+<% if driver_signed_in?  && @currentOrder.size != 0 && @currentOrder.first.id != @order.id %>
   <h3 class="text-danger"> Warning: You currently have a delivery to make.</h3>
 <%end%>
 
-
+<%if !driver_signed_in? %>
   <h3>Items</h3>
   <table class="table">
     <tr>
@@ -60,26 +64,25 @@
       <td><%=number_to_currency @order.total%></td>
     </tr>
   </table>
-
-
-
+<%end%>
   <% if driver_signed_in? %>
-   <% if @order.order_status_id.to_i == 2 && @currentOrder.size == 0 %>
-  <div>
-    <%= form_with(model: @order, local: true) do |form| %>
-    <%= form.hidden_field :driver_id, value:  @driver.id %>
-    <%= form.hidden_field :order_status_id, value: 3 %>
-    <%= form.submit "Take this delivery",class: "btn btn-danger" %>
-    <% end %>
-  </div>
-   <% elsif @order.order_status_id.to_i == 3 %>
-   <div>
-     <%= form_with(model: @order, local: true) do |form| %>
-     <%= form.hidden_field :driver_id, value:  @driver.id %>
-     <%= form.hidden_field :order_status_id, value: 4 %>
-     <%= form.submit "Complete Delivery",class: "btn btn-danger" %>
-     <% end %>
-   </div>
-   <%end%>
+     <% if @order.order_status_id.to_i == 2 && @currentOrder.size == 0 %>
+      <div>
+        <%= form_with(model: @order, local: true) do |form| %>
+        <%= form.hidden_field :driver_id, value:  @driver.id %>
+        <%= form.hidden_field :order_status_id, value: 3 %>
+        <%= form.submit "Take this delivery",class: "btn btn-danger" %>
+        <% end %>
+      </div>
+     <%end%>
+     <% if @order.order_status_id.to_i == 3 && @order.driver_id == @currentOrder.first.driver_id %>
+      <div>
+        <%= form_with(model: @order, local: true) do |form| %>
+        <%= form.hidden_field :driver_id, value:  @driver.id %>
+        <%= form.hidden_field :order_status_id, value: 4 %>
+        <%= form.submit "Complete Delivery",class: "btn btn-danger" %>
+        <% end %>
+      </div>
+     <%end%>
   <% end %>
 </div>
