@@ -38,7 +38,7 @@
       <tr>
         <td><%= o.streetAddress %></td>
         <% begin %>
-          <td><%= o.store_id.street_address %></td>
+          <td><%= o.store_id %></td>
         <% rescue => ex %>
           <td>No store selected</td>
         <% end %>
