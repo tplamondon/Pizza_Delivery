@@ -1,6 +1,6 @@
 class OrderItemsController < ApplicationController
 
-  #before_action :authenticate_any!, only => [:create, :update, :destroy]
+  before_action :authenticate_any!, :only => [:create, :update, :destroy]
 
   def create
     @order = current_order

@@ -3,4 +3,6 @@
 <div class="container">
   <h1>Cancelled</h1>
 </div>
-<%= render "orderTable" %>
+<% if !driver_signed_in? %>
+  <%= render "orderTable" %>
+<% end %>
