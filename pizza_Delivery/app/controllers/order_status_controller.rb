@@ -1,7 +1,7 @@
 class OrderStatusController < ApplicationController
   #ensures we're signed in to at least user before viewing
   before_action :authenticate_any!, :only => [:index, :inProgress, :placed, :shipped, :completed]
-  before_action :authenticate_restaurant!, :only => [:cancelled]
+  before_action :authenticate_restaurant!, :only => [:cancelled, :index]
   #before_action :authenticate_user!, :only => [:inProgress]
 
 
