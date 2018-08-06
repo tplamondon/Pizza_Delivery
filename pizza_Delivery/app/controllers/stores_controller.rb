@@ -10,7 +10,7 @@ class StoresController < ApplicationController
   end
 
   def create
-    @store = Store.new(stores_params)
+    @store = Store.new(store_params)
     if @store.save
     else
       render 'new'
