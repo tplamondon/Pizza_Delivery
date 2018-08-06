@@ -6,8 +6,10 @@
       <th>Order Total</th>
       <th>Created</th>
       <th>Order</th>
+      <% if restaurant_signed_in? %>
       <th>Update Status</th>
       <th>Delete</th>
+      <% end %>
 
     </tr>
     <% @orders.each do |o| %>
@@ -16,8 +18,10 @@
         <td>$<%= o.subtotal %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
         <td><%= link_to 'Show', order_path(o) %></td>
+        <% if restaurant_signed_in? %>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
         <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
+        <% end %>
       <% end %>
     </tr>
   </table>
