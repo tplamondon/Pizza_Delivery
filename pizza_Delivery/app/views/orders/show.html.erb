@@ -2,7 +2,6 @@
 
 <div class="container">
   <h1>Order # <%= @order.id %> </h1>
-
   <p>Delivery address: <%= @order.location %></p>
 <% if @order.order_status_id.to_i == 2 %>
   <p>Order Status: Awaiting Driver Confirmation</p>
@@ -25,11 +24,10 @@
       <%= form.submit "Leave us your feedback", class: "btn btn-danger confirm-payment-btn" %>
       <%end%>
   <%end%>
-
-
-
 <% end %>
-
+<% if driver_signed_in?  && @currentOrder.size != 0 %>
+  <h3 class="text-danger"> Warning: You currently have a delivery to make.</h3>
+<%end%>
 
 
   <h3>Items</h3>
@@ -66,7 +64,7 @@
 
 
   <% if driver_signed_in? %>
-   <% if @order.order_status_id.to_i == 2 %>
+   <% if @order.order_status_id.to_i == 2 && @currentOrder.size == 0 %>
   <div>
     <%= form_with(model: @order, local: true) do |form| %>
     <%= form.hidden_field :driver_id, value:  @driver.id %>

@@ -6,6 +6,7 @@ class OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     if driver_signed_in?
+        @currentOrder = Order.all.where(order_status_id: [3], driver_id: [current_driver.id])
         @driver = current_driver
     end
   end
