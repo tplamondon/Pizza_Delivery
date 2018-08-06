@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   resources :restaurants, :only => [:show, :index, :new]
   # https://stackoverflow.com/questions/24875403/only-allow-admin-user-to-create-new-users-in-rails-with-devise-no-external-modu
   post 'create_restaurant' => 'restaurants#create', as: :create_restaurant
-  resources :orders, :only => [:show, :destroy, :update, :edit]
+  resources :orders, :only => [:index, :show, :destroy, :update, :edit]
 
   resources :stores
 
