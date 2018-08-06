@@ -47,6 +47,7 @@
         <% end %>
         -->
         <% if restaurant_signed_in? %>
+        <td><%= o.order_status_id %></td>
         <td><%= o.userId %></td>
         <td><%= o.driver_id %></td>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
