@@ -16,6 +16,10 @@ form
 {
   display:inline-block;
 }
+.payment-form input[type=text]
+{
+  float:right;
+}
 .payment-form div
 {
   white-space:nowrap;
@@ -30,6 +34,7 @@ select
   border: 1px solid #ccc;
   border-radius: 3px;
 }
+
 
 input[type=text] {
   margin-bottom: 10px;
