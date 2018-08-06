@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+
+  before_action :authenticate_restaurant!, only => [:destroy]
+  before_action :authenticate_worker, only => [:edit, :update]
+
   def show
     @order = Order.find(params[:id])
     if driver_signed_in?

@@ -11,12 +11,23 @@ class ApplicationController < ActionController::Base
       # if we're a user, good
       elsif user_signed_in?
         true
-      # else, authetnicate
       elsif driver_signed_in?
         true
+      # else, authetnicate
       else
           authenticate_user!
       end
+  end
+
+  # authenticate the person is a worker for the restaurant
+  def authenticate_worker!
+    if restaurant_signed_in?
+      true
+    elsif driver_signed_in?
+      true
+    else
+      authenticate_driver!
+    end
   end
 
   def authenticate_customer!
@@ -31,14 +42,15 @@ class ApplicationController < ActionController::Base
       end
   end
 
-  def authenticate_restaurant!
-      # if we're a restaurant, good
-      if restaurant_signed_in?
-          true
-      else
-          authenticate_user!
-      end
-  end
+  # already a built in thing...
+  #def authenticate_restaurant!
+  #    # if we're a restaurant, good
+  #    if restaurant_signed_in?
+  #        true
+  #    else
+  #        authenticate_user!
+  #    end
+  #end
 
   protect_from_forgery with: :exception
   helper_method :current_order
