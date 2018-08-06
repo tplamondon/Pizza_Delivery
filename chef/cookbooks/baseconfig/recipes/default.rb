@@ -6,6 +6,42 @@ execute 'apt_update' do
   command 'apt-get update'
 end
 
+package "git-core"
+package "curl"
+package "zlib1g-dev"
+package "build-essential"
+package "libssl-dev"
+package "libreadline-dev"
+package "libyaml-dev"
+package "libsqlite3-dev"
+package "sqlite3"
+package "libxml2-dev"
+package "libxslt1-dev"
+package "libcurl4-openssl-dev"
+package "libffi-dev"
+
+cookbook_file "bashrc" do
+  path "/home/vagrant/.bashrc"
+end
+
+
+
+execute 'get rbenv' do
+  command 'git clone git://github.com/sstephenson/rbenv.git .rbenv'
+  #command 'echo "export PATH=\'$HOME/.rbenv/bin:$PATH\'" >> ~/.bashrc'
+#  command 'echo "eval \'$(rbenv init -)\'" >> ~/.bash_profile'
+end
+
+execute 'get rbenv 2' do
+  command 'git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build'
+#  command 'echo "export PATH=\'$HOME/.rbenv/plugins/ruby-build/bin:$PATH\'" >> ~/.bashrc'
+  command 'sudo source ~/.bashrc'
+end
+
+execute 'get ruby' do
+  command 'rbenv install -v 2.5.1'
+  command 'rbenv global 2.5.1'
+end
 # Base configuration recipe in Chef.
 package "wget"
 package "ntp"
@@ -64,7 +100,7 @@ execute 'bundle' do
 end
 
 execute 'start-up commands' do
-  command 'mkdir -p /home/vagrant/pizza_delivery/shared/pids /home/vagrant/pizza_delivery/shared/sockets /home/vagrant/pizza_delivery/shared/log'
+  command 'mkdir -p /home/vagrant/pids /home/vagrant/pizza_delivery/shared/sockets /home/vagrant/pizza_delivery/shared/log'
 end
 #execute 'devise' do
 #  cwd '/home/vagrant/project/pizza_delivery'
@@ -111,7 +147,7 @@ execute 'seed' do
 end
 
 execute 'unicorn' do
-	#command 'chmod 755 /etc/init.d/unicorn_pizza_delivery'
+	command 'sudo chmod a+x /etc/init.d/unicorn_pizza_delivery'
 	command 'update-rc.d unicorn_pizza_delivery defaults'
 end
 
