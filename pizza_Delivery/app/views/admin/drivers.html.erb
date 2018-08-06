@@ -1,0 +1,63 @@
+<div class="container">
+  <h1>Admin Tools</h1>
+  <div class ="row">
+    <%= form_tag(admin_drivers_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :id, params[:id], placeholder: "Search Driver ID", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_drivers_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :name, params[:name], placeholder: "Search by Name", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_drivers_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :email, params[:email], placeholder: "Search by email", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_drivers_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :phoneNumber, params[:phoneNumber], placeholder: "Search by phone number", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+
+    <h3>Search Result</h3>
+    <table class="table">
+      <tr>
+        <th>Driver ID</th>
+        <th>Driver Name</th>
+        <th>Driver Email</th>
+        <th>Driver Phone Number</th>
+        <th>Date Created</th>
+      </tr>
+      <%if @drivers.size != 0 %>
+        <% @drivers.each do |o| %>
+          <tr>
+            <td><%= o.id %></td>
+            <td><%= o.name %></td>
+            <td><%= o.email %></td>
+            <td><%= o.phoneNumber %></td>
+            <td><%= o.created_at %></td>
+          </tr>
+        <% end %>
+    <% end %>
+
+  </table>
+</div>
+
+</div>

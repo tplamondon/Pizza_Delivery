@@ -24,11 +24,11 @@ before_action :authenticate_restaurant!, :only => [:index]
     @products = @products.pname(params[:name]) if params[:name].present?
     @products = @products.price(params[:price]) if params[:price].present?
     @products = @products.food(params[:food]) if params[:food].present?
-
   end
   def stores
   end
   def drivers
+    @drivers = Driver.all  # creates an anonymous scope
   end
   def customers
   end
