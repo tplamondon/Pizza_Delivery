@@ -44,6 +44,8 @@ Rails.application.routes.draw do
   post 'create_restaurant' => 'restaurants#create', as: :create_restaurant
   resources :orders, :only => [:show, :destroy, :update, :edit]
 
+  resources :stores
+
   #https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails
   resources :products, only: [:index]
   resource :cart, only: [:show]
