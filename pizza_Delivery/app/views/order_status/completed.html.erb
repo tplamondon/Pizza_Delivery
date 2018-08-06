@@ -1,9 +1,46 @@
+<div class="container customContainer">
 
-<div class="container">
-  <h1>Completed</h1>
+  <h1 class ="text-center">Past Orders</h1>
+<div class="row">
+
+  <div class="col">
+
+    <%= link_to 'Info', home_about_path, class:"btn btn-danger btn-lg"%>
+    <% if !driver_signed_in? %>
+      <%= link_to 'Menu', products_path, class:"btn btn-danger btn-lg" %>
+    <% end %>
+    <%= link_to 'About Us', pizza_canada_info_path, class:"btn btn-danger btn-lg" %> <!--Need to update link-->
+    <%= link_to 'Store Locator', products_path, class:"btn btn-danger btn-lg" %>
+    <img src="/assets/Another-Promo.jpg" width="100%" height="auto"></img>
+  </div>
+  <div class="order-col">
+  <table class="table">
+    <tr>
+      <th>Delivery Address</th>
+      <th>Created</th>
+      <th>Order Total</th>
+      <th>Order</th>
+      <% if restaurant_signed_in? %>
+      <th>Update Status</th>
+      <th>Delete</th>
+      <% end %>
+    </tr>
+
+    <% @orders.each do |o| %>
+      <tr>
+        <td><%= o.location %></td>
+        <td><%= o.created_at %></td>
+        <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
+        <td><%= link_to 'Show', order_path(o) %></td>
+        <% if restaurant_signed_in? %>
+        <td><%= link_to 'Update Status', edit_order_path(o) %></td>
+        <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
+        <% end %>
+      <% end %>
+    </tr>
+  </table>
+  <img src="/assets/Pizza-Thursday-Promo.jpg" width="100%" height="100%"></img>
+
 </div>
- <% if driver_signed_in? %>
- <%= render "driverOrderTable" %>
- <% else %>
-  <%= render "orderTable" %>
-<% end %>
+  </div>
+</div>

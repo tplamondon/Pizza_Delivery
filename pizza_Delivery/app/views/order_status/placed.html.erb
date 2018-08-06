@@ -16,13 +16,13 @@
   <div class="order-col">
   <table class="table">
     <tr>
-      <th>Order Location</th>
-      <th>Order Total</th>
+      <th>Delivery Address</th>
       <th>Created</th>
-      <th>Order</th>
       <% if user_signed_in? %>
       <th>Order Status</th>
       <% end %>
+      <th>Order Total</th>
+      <th>Order</th>
       <% if restaurant_signed_in? %>
       <th>Update Status</th>
       <th>Delete</th>
@@ -32,9 +32,7 @@
     <% @orders.each do |o| %>
       <tr>
         <td><%= o.location %></td>
-        <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
         <td><%= o.created_at %></td>
-        <td><%= link_to 'Show', order_path(o) %></td>
         <% if user_signed_in? %>
           <% if o.order_status_id.to_i == 2 %>
             <td>Awaiting Driver Confirmation</td>
@@ -42,6 +40,8 @@
             <td>Order being shipped</td>
           <%end%>
         <% end %>
+        <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
+        <td><%= link_to 'Show', order_path(o) %></td>
         <% if restaurant_signed_in? %>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>
         <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
