@@ -1,14 +1,36 @@
 
 
 <div class="container">
-  <h1>Order</h1>
-  <ul class="noPoints">
-    <li><p>Subtotal: $<%= @order.subtotal %></p></li>
-    <li><p>Shipping: $10</p></li>
-    <li><p>Total: $<%= @order.subtotal + 10%></p></li>
-    <li><p>Location: <%= @order.location %></p></li>
-    <li><p>Status: <%= @order.order_status_id %></p></li>
-  </ul>
+  <h1>Order # <%= @order.id %> </h1>
+
+  <p>Delivery address: <%= @order.location %></p>
+<% if @order.order_status_id.to_i == 2 %>
+  <p>Order Status: Awaiting Driver Confirmation</p>
+<% elsif @order.order_status_id.to_i == 3%>
+  <p>Order Status: Delivering Now</p>
+<% elsif @order.order_status_id.to_i == 4%>
+    <p>Order Status: Completed</p>
+    <p>Driver Rating: <%= @order.driverRating%> out of 5</p>
+    <p>Food Rating: <%= @order.foodRating%> out of 5</p>
+    <% if !@order.driverRating? && !@order.foodRating? && user_signed_in?%>
+      <%= form_with(model: @order, local: true) do |form| %>
+      <div class="field">
+        <%= form.label :foodRating, "Rate our food" %><br />
+        <%= form.select(:foodRating, [['★☆☆☆☆', 1], ['★★☆☆☆', 2],  ['★★★☆☆',3],  ['★★★★☆',4],  ['★★★★★',5]], {}, { :class => 'my_style_class' }) %>
+      </div>
+      <div class="field">
+        <%= form.label :driverRating, "Rate our driver" %><br />
+        <%= form.select(:driverRating, [['★☆☆☆☆', 1], ['★★☆☆☆', 2],  ['★★★☆☆',3],  ['★★★★☆',4],  ['★★★★★',5]], {}, { :class => 'my_style_class' }) %>
+      </div>
+      <%= form.submit "Leave us your feedback", class: "btn btn-danger confirm-payment-btn" %>
+      <%end%>
+  <%end%>
+
+
+
+<% end %>
+
+
 
   <h3>Items</h3>
   <table class="table">
@@ -25,8 +47,23 @@
       </tr>
     <% end %>
     <tr>
+      <td></td>
+      <td>Subtotal</td>
+      <td><%=number_to_currency @order.subtotal%></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Shipping</td>
+      <td>$10.00</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>Total</td>
+      <td><%=number_to_currency @order.total%></td>
     </tr>
   </table>
+
+
 
   <% if driver_signed_in? %>
    <% if @order.order_status_id.to_i == 2 %>
