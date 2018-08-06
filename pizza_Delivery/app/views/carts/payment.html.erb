@@ -51,6 +51,7 @@
     </div>
     <%= form.hidden_field :userId, :required => true, :value => current_user.id %>
     <%= form.hidden_field :order_status_id, value: 2 %>
+    <%= form.hidden_field :store_id, value: current_order.store_id, :required => true %>
     <%= form.submit "Confirm Payment", class: "btn btn-danger confirm-payment-btn" %>
 <% end %>
 
