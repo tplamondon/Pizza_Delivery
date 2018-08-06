@@ -1,0 +1,9 @@
+
+<div class="container customContainer">
+  <h1 class="text-center">Stores</h1>
+
+  <% @stores.each do |store| %>
+    <%= render "store_row", store: store %>
+  <% end %>
+
+</div>
