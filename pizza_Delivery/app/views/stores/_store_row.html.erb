@@ -13,7 +13,7 @@
             <%= f.hidden_field :store_id, value: store.id %>
             <%= f.submit "Select Store", class: "btn btn-danger" %>
             <% if restaurant_signed_in? %>
-              <%= link_to "Delete", store_path(store), method: :delete, class: "btn btn-danger" %>
+              <%= link_to "Delete", store_path(store), method: :delete, class: "btn btn-danger smaller-button" %>
             <% end %>
           </div>
         </div>
