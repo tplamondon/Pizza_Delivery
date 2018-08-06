@@ -73,7 +73,8 @@
                 <span class="caret"></span></button>
                 <ul class="dropdown-menu">
                   <!-- This is orders currently being delivered, I'm just naming the button this way as it's a good name-->
-                  <li><%= link_to 'Current Orders', order_status_shipped_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to 'Shipped Orders', order_status_shipped_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to 'In Progress Orders', order_status_inProgress_path, :class => 'navbar-link' %></li>
                   <li><%= link_to 'Placed Orders', order_status_placed_path, :class => 'navbar-link' %></li>
                   <li><%= link_to 'Past Orders', order_status_completed_path, :class => 'navbar-link' %></li>
                </ul>
