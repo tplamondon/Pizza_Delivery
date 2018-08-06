@@ -1,6 +1,9 @@
 class OrderStatusController < ApplicationController
   #ensures we're signed in to at least user before viewing
-  before_action :authenticate_any!, :only => [:index, :inProgress, :placed, :shipped, :completed, :cancelled]
+  before_action :authenticate_any!, :only => [:index, :placed, :shipped, :completed]
+  before_action :authenticate_restaurant!, :only => [:cancelled]
+  before_action :authenticate_user!, :only => [:inProgress]
+
 
 
   def index
@@ -11,14 +14,12 @@ class OrderStatusController < ApplicationController
     #@orders = Order.all.where(order_status_id: [1])
     if user_signed_in?
       @orders = Order.all.where(order_status_id: [1], userId: [current_user.id])
-    elsif restaurant_signed_in?
-      @orders = Order.all.where(order_status_id: [1])
     end
   end
 
   def placed
     if user_signed_in?
-      @orders = Order.all.where(order_status_id: [2], userId: [current_user.id])
+      @orders = Order.all.where(order_status_id: [2, 3], userId: [current_user.id])
     elsif restaurant_signed_in?
       @orders = Order.all.where(order_status_id: [2])
     elsif driver_signed_in?

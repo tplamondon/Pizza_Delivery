@@ -39,7 +39,15 @@
            </div>
           </li>
           <li>
-            <%= link_to('View Orders', order_status_index_path, :class => 'btn-danger whitetext') %>
+            <div class="dropdown">
+             <button class="btn btn-danger dropdown-toggle navigation-button" type="button" data-toggle="dropdown">View Orders
+             <span class="caret"></span></button>
+             <ul class="dropdown-menu">
+               <li><%= link_to 'Current Order', carts_show_path, :class => 'navbar-link' %></li>
+               <li><%= link_to 'Placed Orders', order_status_placed_path, :class => 'navbar-link' %></li>
+               <li><%= link_to 'Past Orders', order_status_completed_path, :class => 'navbar-link' %></li>
+            </ul>
+           </div>
           </li>
           <li>
             <h1 class="cart-text carttext"><%= render 'layouts/cart_text' %></h1>
