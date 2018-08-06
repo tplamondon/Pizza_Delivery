@@ -9,7 +9,7 @@
     <li><a class="btn btn-danger btn-lg" data-toggle="tab" href="#wing">Wings</a></li>
   </ul>
 </div>
-  <div class="col tab-content">
+<div class="col tab-content">
     <div id="pizza" class="tab-pane fade in active">
       <% @products.each do |product| %>
         <% if product.food == 1 %>
@@ -46,3 +46,4 @@
       <% end %>
     </div>
 </div>
+<%= link_to "Review Order", cart_path, class: "btn btn-danger review-order-btn whitetext" %>
