@@ -19,6 +19,17 @@ class ApplicationController < ActionController::Base
       end
   end
 
+  def authenticate_not_driver!
+    if restaurant_signed_in?
+        true
+    # if we're a user, good
+    elsif user_signed_in?
+      true
+    else
+        authenticate_user!
+    end
+end
+
   # authenticate the person is a worker for the restaurant
   def authenticate_worker!
     if restaurant_signed_in?

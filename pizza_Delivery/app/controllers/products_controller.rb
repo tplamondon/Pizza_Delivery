@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_user!, :only => [:index]
+  before_action :authenticate_not_driver!, :only => [:index]
+
 
   # the menu
   def index

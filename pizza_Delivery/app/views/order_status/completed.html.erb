@@ -31,7 +31,7 @@
 
     <% @orders.each do |o| %>
       <tr>
-        <td><%= o.location %></td>
+        <td><%= o.streetAddress %></td>
         <td><%= o.created_at %></td>
         <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
         <td><%= link_to 'Show', order_path(o) %></td>
