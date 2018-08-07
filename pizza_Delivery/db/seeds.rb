@@ -47,9 +47,9 @@ OrderStatus.create! id: 4, name: "Completed"
 OrderStatus.create! id: 5, name: "Cancelled"
 
 Store.delete_all
-Store.create! id: 1, street_address: "8888 Univercity Drive", city: "Burnaby", province: "British Columbia", zipCode: "V5A 1S6"
-Store.create! id: 2, street_address: "2850 Grandview Hwy", city: "Vancouver", province: "British Columbia", zipCode: "V5M 2C9"
-Store.create! id: 3, street_address: "2850 Shaugnessy St #2111", city: "Port Coquitlam", province: "British Columbia", zipCode: "V3C 6K5"
+Store.create! id: 1, street_address: "13747 104 Ave", city: "Surrey", province: "BC", zipCode: "V3T1W6", latitude: 49.191577, longitude: -122.841659
+Store.create! id: 5, street_address: "1393 Robson St", city: "Vancouver", province: "BC", zipCode: "V6E2B1", latitude: 49.287893, longitude: -123.129593
+Store.create! id: 6, street_address: "4000 No 3 Rd", city: "Richmond", province: "BC", zipCode: "V6X0J1", latitude: 49.183571, longitude: -123.134692
 
 #OrderItem.delete_all
 #Order.delete_all
