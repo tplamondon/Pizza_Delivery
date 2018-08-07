@@ -1,39 +1,48 @@
-This is the template for CMPT 470 projects, providing some basics for Vagrant and Virtualbox setups, with configuration by Chef.
+This is the README file for our CMPT 470 project
+The name of our project is Pizza Canada Delivery Web-system
 
+Important information for the web-system:
 
-We use devise for user accounts
-TODO:
- * Possibly add more fields to users
- * adjust devise default views of log in, sign up
- * Restaurant pages (menu's) that are editable by restaurants
- * Order Forms
- * better home page
-
-
-
-Readings
-* Authentication with devise
-- https://guides.railsgirls.com/devise
-* Setting up multiple devise user stuff
-- https://github.com/plataformatec/devise/wiki/How-to-Setup-Multiple-Devise-User-Models
-* Adding sign up, sign in links
-- https://github.com/plataformatec/devise/wiki/How-To:-Add-sign_in,-sign_out,-and-sign_up-links-to-your-layout-template
-* Boostrap grid System
-- https://getbootstrap.com/docs/4.0/layout/grid/
-* Log in as this or that
-- https://stackoverflow.com/questions/4612545/devise-login-with-user-or-admin-models-and-basecamp-style-subdomains
-* Devise
-- https://github.com/plataformatec/devise#strong-parameters
-* Adding more fields to model
-- https://stackoverflow.com/questions/14371633/adding-more-fields-to-an-existing-model
-* Adding more fields to devise in sanatised parameters (really, just look what I did under controllers/restaurants/registrations_controller)
-* more or less, uncomment out the 2 things near top of before_action and add fields into keys: array
-- https://stackoverflow.com/questions/42052998/adding-more-fields-to-devises-new-registration-view-causing-activerecordstate
+Access the page at http://localhost:3000
+Seeded admin account information:
+Username/Email: admin@sfu.ca
+Password: pizzaCanada
 
 
 
-* Code taken from here: https://richonrails.com/articles/building-a-shopping-cart-in-ruby-on-rails1
-* fix for cart problem provided by comment by  andre-lgf (change before_create :set_order_status -> before_validation :set_order_status, on: :create)
+Our Pizza Canada Delivery System has the following features :
 
+For the customers:
+Account registration and log-in feature (Password is saved as hashed value)
+One website requirements is that users cannot see the menu without logging in. They will be forced to log in.
+Once logged in, customers can add items to cart, choose their store, and complete their payment
+Once an order is placed, the customer can view the status of their order
+Once customer receives their order, they can leave a feed back for both the food and the driver.
+Customers can also access cart, current placed orders, and completed orders and each of these individual orders
 
-Make sure to run "rake db:seed"
+For the drivers:
+Account registration and Log-in feature (Password is saved as hashed value)
+Once logged in, drivers are not allowed to see the menu button nor access menu page.
+Drivers can view placed orders that are awaiting drivers.
+Driver can click show order and can choose to take the delivery
+Once a delivery is taken, driver can complete the delivery
+in case of emergency, they can return it back to the delivery pool for other drivers
+Drivers can view their current delivery, available deliveries, or completed deliveries.
+If a driver already has a current delivery, they won't be allowed to take a new one and will be alerted when they look at another order's page.
+Drivers' view of the order page is limited to only address information and rating. Not the actual order information
+
+For the Administrator:
+Create admin accounts
+View placed orders, orders out for delivery, completed Orders.
+View each individual order and their information.
+Can Change order status or delete an order in extreme cases.
+Can perform search functions on the following tables: Products, Customers, Admins, Drivers, Orders, Stores
+Can create new Stores.
+
+Other site features:
+Front-page carousel: A carousel if images in case the company wants to put up promotional pictures.
+Sticky navigation bar: Navigation bar always show up at the top of the browser
+Order progress bar: Progress bar for each order to indicate order status.
+
+Unfinished features:
+Incorporating a Google Map API into the project

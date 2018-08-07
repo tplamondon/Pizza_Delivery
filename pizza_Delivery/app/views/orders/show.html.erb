@@ -2,6 +2,32 @@
 
 <div class="container">
   <h1>Order # <%= @order.id %> </h1>
+<div class="row">
+  <div class="progress-container">
+      <ul class="progressbar">
+        <% if @order.order_status_id.to_i == 1 %>
+          <li class="active">In Progress</li>
+        <%else%>
+          <li>In Progress</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 2 %>
+          <li class="active">Awaiting Driver Confirmation</li>
+        <%else%>
+          <li>Awaiting Driver Confirmation</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 3 %>
+          <li class="active">Out for Delivery</li>
+        <%else%>
+          <li>Out for Delivery</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 4 %>
+          <li class="active">Completed</li>
+        <%else%>
+          <li>Completed</li>
+        <%end %>
+      </ul>
+  </div>
+</div>
   <p>Delivery address: <%= @order.streetAddress %></p>
   <p>City: <%= @order.city %></p>
   <p>Province: <%= @order.province %></p>
@@ -10,7 +36,7 @@
 <% if @order.order_status_id.to_i == 2 %>
   <p>Order Status: Awaiting Driver Confirmation</p>
 <% elsif @order.order_status_id.to_i == 3%>
-  <p>Order Status: Delivering Now</p>
+  <p>Order Status: Out For Delivery</p>
 <% elsif @order.order_status_id.to_i == 4%>
     <p>Order Status: Completed</p>
     <p>Driver Rating: <%= @order.driverRating%> out of 5</p>
@@ -30,7 +56,7 @@
   <%end%>
 <% end %>
 <% if driver_signed_in?  && @currentOrder.size != 0 && @currentOrder.first.id != @order.id %>
-  <h3 class="text-danger"> Warning: You currently have a delivery to make.</h3>
+  <h3 class="text-warning"> Warning: You currently have a delivery to make.</h3>
 <%end%>
 
 <%if !driver_signed_in? %>

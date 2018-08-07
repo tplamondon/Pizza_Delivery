@@ -73,15 +73,6 @@ ActiveRecord::Schema.define(version: 2018_08_07_063346) do
     t.index ["store_id"], name: "index_orders_on_store_id"
   end
 
-  create_table "places", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 12, scale: 3
