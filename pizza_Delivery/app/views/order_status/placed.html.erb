@@ -40,7 +40,7 @@
           <% if o.order_status_id.to_i == 2 %>
             <td>Awaiting Driver Confirmation</td>
           <% elsif o.order_status_id.to_i == 3 %>
-            <td>Delivering Now</td>
+            <td>Out For Delivery</td>
           <%end%>
         <% end %>
         <td><%= number_to_currency o.total %></td>

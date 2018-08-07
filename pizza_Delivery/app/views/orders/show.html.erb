@@ -36,7 +36,7 @@
 <% if @order.order_status_id.to_i == 2 %>
   <p>Order Status: Awaiting Driver Confirmation</p>
 <% elsif @order.order_status_id.to_i == 3%>
-  <p>Order Status: Delivering Now</p>
+  <p>Order Status: Out For Delivery</p>
 <% elsif @order.order_status_id.to_i == 4%>
     <p>Order Status: Completed</p>
     <p>Driver Rating: <%= @order.driverRating%> out of 5</p>
