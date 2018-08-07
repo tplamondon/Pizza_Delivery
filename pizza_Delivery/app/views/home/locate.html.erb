@@ -11,25 +11,55 @@
    </style>
 <div class= "card z-depth-3">
   <div class="card-content">
-  <input id="address" type="textbox" value="SFU">
-  <input id="submit" type="button" value="Search for locations near you">
+  <input id="address" type="textbox" value="Type your address here">
+  <input id="submit" type="button" value="Doesn't do anything yet">
   <br/>
 
 </div>
 </div>
 <div id="map"></div>
+<div id='sidebar_container'></div>
 
 
 <script type='text/javascript'>
+function createSidebarLi(json){
+  return ("<li><a>" + json.name + "</a></li>");
+};
+
+function bindLiToMarker($li, marker){
+  $li.on('click', function(){
+    handler.getMap().setZoom(14);
+    marker.setMap(handler.getMap()); //because clusterer removes map property from marker
+    marker.panTo();
+    google.maps.event.trigger(marker.getServiceObject(), 'click');
+  })
+};
+
+function createSidebar(json_array){
+  _.each(json_array, function(json){
+    var $li = $( createSidebarLi(json) );
+    $li.appendTo('#sidebar_container');
+    bindLiToMarker($li, json.marker);
+  });
+};
+
 handler = Gmaps.build('Google');
-handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-  var markers = handler.addMarkers([
-    { lat: 43, lng: 3.5},
-    { lat: 45, lng: 4},
-    { lat: 47, lng: 3.5},
-    { lat: 49, lng: 4},
-    { lat: 51, lng: 3.5}
-  ]);
-  handler.bounds.extendWith(markers)
+handler.buildMap({ internal: {id: 'map'}}, function(){
+  var json_array = [
+    { lat: 49.184403, lng: -122.844903, name: 'Pizza Canada Surrey', infowindow: "Pizza Canada Surrey\nHours:\nEveryday: 9:00 am - 10:00 pm" },
+    { lat: 49.284286, lng: -123.129162, name: 'Pizza Canada Vancouver', infowindow: "Pizza Canada Vancouver\nHours:\nEveryday: 9:00 am - 10:00 pm" },
+    { lat: 49.164604, lng: -123.138436, name: 'Pizza Canada Richmond', infowindow: "Pizza Canada Richmond\nHours:\nEveryday: 9:00 am - 10:00 pm" }
+  ];
+
+  var markers = handler.addMarkers(json_array);
+
+  _.each(json_array, function(json, index){
+    json.marker = markers[index];
+  });
+
+  createSidebar(json_array);
+  handler.bounds.extendWith(markers);
   handler.fitMapToBounds();
-});</script>
+});
+
+</script>
