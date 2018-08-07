@@ -21,8 +21,8 @@ Product.create! id: 4, name: "Veggie Pizza", price: 12.00, active: true, food: 1
 Product.create! id: 5, name: "Olive and Ham Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/blackolive.jpg"
 Product.create! id: 6, name: "Garlic Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/garlic.jpg"
 Product.create! id: 7, name: "Meat Lovers Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
-Product.create! id: 8, name: "Square Pizza", price: 13.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
-Product.create! id: 9, name: "Thin Crust Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
+Product.create! id: 8, name: "Square Pizza", price: 13.00, active: true, food: 1, image_src: "/assets/pizzas/square-pizza.jpg"
+Product.create! id: 9, name: "Thin Crust Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/thin-crust.jpg"
 
 Product.create! id: 10, name: "Coca Cola", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/Coca-Cola.jpg"
 Product.create! id: 11, name: "Pepsi", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/Pepsi.png"
