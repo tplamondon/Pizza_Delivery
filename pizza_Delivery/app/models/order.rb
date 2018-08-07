@@ -18,7 +18,7 @@ private
   def update_subtotal
     self[:subtotal] = subtotal
     # not sure if this will work
-    self[:shipping] = 10
-    self[:total] = subtotal+10
+    self[:shipping] = 3
+    self[:total] = subtotal+3
   end
 end

@@ -29,7 +29,7 @@ Product.create! id: 10, name: "Dr Pepper", price: 3.50, active: true, food: 2, i
 Product.create! id: 11, name: "Vanilla Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/vanilla.jpg"
 Product.create! id: 12, name: "Chocolate Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/chocolate.jpg"
 Product.create! id: 13, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/strawberry.jpg"
-Product.create! id: 14, name: "Applie Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
+Product.create! id: 14, name: "Apple Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
 
 Product.create! id: 15, name: "Spinach Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Spinnach.jpg"
 Product.create! id: 16, name: "Salad Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Salad.jpg"

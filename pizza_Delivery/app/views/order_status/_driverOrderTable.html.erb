@@ -1,23 +1,29 @@
 <div class="container">
+<h1>Your Current Delivery</h1>
+<% if @order.nil? %>
+  <p class="text-center">
+    You do not currently have a delivery to make. <%= link_to "Go back", order_status_placed_path %> and add choose a delivery.
+  </p>
+<% else %>
+  <h4>Delivery Info</h4>
 
-  <table class="table">
-    <tr>
-      <th>Order Location</th>
-      <th>Order Total</th>
-      <th>Created</th>
-      <th>Order</th>
-
-    </tr>
-    <% @orders.each do |o| %>
-      <tr>
-        <td><%= o.location %></td>
-        <td>$<%= o.subtotal %></td> <!-- should this be total? -->
-        <td><%= o.created_at %></td>
-        <td><%= link_to 'Show', order_path(o) %></td>
-      <% end %>
-    </tr>
-  </table>
-
-
-  <%= link_to 'Back', order_status_index_path %>
+    <p>Delivery address: <%= @order.streetAddress %></p>
+    <p>City: <%= @order.city %></p>
+    <p>Province: <%= @order.province %> </p>
+    <p>Postal Code:<%= @order.location %>
+  <div>
+    <%= form_with(model: @order, local: true) do |form| %>
+    <%= form.hidden_field :driver_id, value:  @driver.id %>
+    <%= form.hidden_field :order_status_id, value: 4 %>
+    <%= form.submit "Complete Delivery",class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  <div>
+    <%= form_with(model: @order, local: true) do |form| %>
+    <%= form.hidden_field :driver_id, value: nil %>
+    <%= form.hidden_field :order_status_id, value: 2 %>
+    <%= form.submit "Decline Delivery",class: "btn btn-danger" %>
+    <% end %>
+  </div>
+  <%end%>
 </div>

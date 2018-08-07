@@ -1,6 +1,6 @@
 <h1 class ="text-center">Please review and complete your order</h1>
 <div class="payment-page">
-  <div class="payment-form  ">
+  <div class="payment-form">
     <!-- the stuff that works to update location -->
 <%= form_with(model: current_order, local: true) do |form| %>
     <h3>Billing Information</h3>
@@ -22,8 +22,8 @@
       <%= form.text_field :name, :required => true, :value => current_user.name %>
     </div>
     <div>
-      <%= form.label(:bill_address, "Billing Address") %>
-      <%= form.text_field :bill_address, :required => true, :value => current_user.streetAddress %>
+      <%= form.label(:streetAddress, "Delivery Address") %>
+      <%= form.text_field :streetAddress, :required => true, :value => current_user.streetAddress %>
     </div>
     <div>
       <%= form.label(:city, "City") %>
@@ -49,9 +49,16 @@
       <%= form.label(:phoneNumber, "Phone Number") %>
       <%= form.text_field :phoneNumber, :required => true %>
     </div>
+    <%if !current_order.store_id?%>
+    <div>
+        <%= form.label(:store_id, "Choose Store Location") %>
+        <%=form.select :store_id, Store.all.map{ |s| [s.street_address, s.id] }, :required => true %>
+    </div>
+    <%end%>
     <%= form.hidden_field :userId, :required => true, :value => current_user.id %>
     <%= form.hidden_field :order_status_id, value: 2 %>
-    <%= form.submit "Confirm Payment", class: "btn btn-danger" %>
+    <%= form.hidden_field :store_id, value: current_order.store_id, :required => true %>
+    <%= form.submit "Confirm Payment", class: "btn btn-danger confirm-payment-btn" %>
 <% end %>
 
   </div>
@@ -68,14 +75,14 @@
         <%= render 'carts/payment_cart_row', product: order_item.product, order_item: order_item, show_total: true %>
       <% end %>
       <tr>
-        <td>Shipping</td>
-        <td></td>
-        <td>$10.00</td>
-      </tr>
-      <tr>
         <td>Subtotal</td>
         <td></td>
         <td><%=number_to_currency @order.subtotal%></td>
+      </tr>
+      <tr>
+        <td>Shipping</td>
+        <td></td>
+        <td>$10.00</td>
       </tr>
       <tr>
         <td>Total</td>
