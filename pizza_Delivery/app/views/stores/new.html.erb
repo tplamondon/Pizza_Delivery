@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Create a new store</h2>
+  <%= form_with scope: :store, url: stores_path do |f| %>
+  <% if @store.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@store.errors.count, "error") %> prohibited
+        this store from being saved:
+      </h2>
+      <ul>
+        <% @store.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :street_address %><br />
+    <%= f.text_field :street_address %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= f.label :province %><br />
+    <%= f.text_field :province %>
+  </div>
+
+  <div class="field">
+    <%= f.label :zipCode %><br />
+    <%= f.text_field :zipCode %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create" %>
+  </div>
+
+  <% end %>
+</div>

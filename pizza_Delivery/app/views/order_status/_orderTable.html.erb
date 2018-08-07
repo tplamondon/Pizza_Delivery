@@ -37,7 +37,7 @@
     <% @orders.each do |o| %>
       <tr>
         <td><%= o.streetAddress %></td>
-        <td><%= o.created_at %></td>
+        <td><%= Time.at(o.created_at).in_time_zone("Pacific Time (US & Canada)").strftime("%m/%d/%y %I:%M %p") %></td>
         <td><%= number_to_currency o.total %></td>
         <td><%= link_to 'Show', order_path(o) %></td>
         <!-- User's should not have acess to update status of orders
@@ -46,6 +46,7 @@
         <% end %>
         -->
         <% if restaurant_signed_in? %>
+        <td><%= o.order_status_id %></td>
         <td><%= o.userId %></td>
         <td><%= o.driver_id %></td>
         <td><%= link_to 'Update Status', edit_order_path(o) %></td>

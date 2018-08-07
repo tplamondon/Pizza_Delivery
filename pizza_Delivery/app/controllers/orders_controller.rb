@@ -36,6 +36,6 @@ class OrdersController < ApplicationController
 
   private
     def order_params
-      params.require(:order).permit(:location, :province,:city, :streetAddress, :order_status_id, :userId, :driver_id, :foodRating, :driverRating)
+      params.require(:order).permit(:location, :province,:city, :streetAddress, :order_status_id, :userId, :driver_id, :foodRating, :driverRating, :delivery_address, :store_id)
     end
 end
