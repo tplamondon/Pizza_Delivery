@@ -11,6 +11,12 @@ Rails.application.routes.draw do
   get 'order_items/create'
   get 'order_items/update'
   get 'order_items/destroy'
+  get 'admin/orders'
+  get 'admin/restaurants'
+  get 'admin/products'
+  get 'admin/stores'
+  get 'admin/drivers'
+  get 'admin/customers'
   get 'carts/show'
   get 'carts/payment'
   get 'products/index'
@@ -19,7 +25,6 @@ Rails.application.routes.draw do
   get 'pizza_canada/info'
   get 'home/about'
   get 'home/index'
-  get 'home/regis'
 
   # doesn't work for some reason???
   # here maybe? https://stackoverflow.com/questions/19057217/uninitialized-constant-sessionscontroller-in-api/19058081

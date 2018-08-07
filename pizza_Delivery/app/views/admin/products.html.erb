@@ -1,0 +1,58 @@
+<div class="container">
+  <h1 class="text-center">Manage Products</h1>
+  <div class ="row">
+    <%= form_tag(admin_products_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :id, params[:id], placeholder: "Search Product ID", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_products_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :name, params[:name], placeholder: "Search by Name", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_products_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :price, params[:price], placeholder: "Search By Price", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_products_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :food, params[:food], placeholder: "Search By Type", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+
+    <h3>Search Result</h3>
+    <table class="table">
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Product Type</th>
+        <th>Product Price</th>
+      </tr>
+    <% @products.each do |o| %>
+        <tr>
+          <td><%= o.id %></td>
+          <td><%= o.name %></td>
+          <td><%= o.food %></td>
+          <td><%= o.price %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+
+</div>

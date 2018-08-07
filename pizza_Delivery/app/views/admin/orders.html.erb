@@ -1,0 +1,89 @@
+<div class="container">
+  <h1 class="text-center">Manage Orders</h1>
+  <div class ="row">
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :id, params[:id], placeholder: "Search Order ID", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :userId, params[:userId], placeholder: "Search by customer id", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :driver_id, params[:driver_id], placeholder: "Search by driver id", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :store_id, params[:store_id], placeholder: "Search by Stores", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :foodRating, params[:foodRating], placeholder: "Search by food rating (1-5)", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :driverRating, params[:driverRating], placeholder: "Search by driver rating (1-5)", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+    <%= form_tag(admin_orders_path, :method => "get", class: 'navbar-form navbar-left') do %>
+      <div class="input-group">
+        <%= search_field_tag :driverRating, params[:driverRating], placeholder: "Search by Order status(1-4)", class: "form-control" %>
+        <div class="input-group-btn">
+          <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="row">
+    <h3>Search Result</h3>
+    <table class="table">
+      <tr>
+        <th>Delivery Address</th>
+        <th>Created</th>
+        <th>Order Total</th>
+        <th>Order</th>
+        <th>Customer</th>
+        <th>Driver</th>
+        <th>Update Status</th>
+        <th>Delete</th>
+      </tr>
+    <% @orders.each do |o| %>
+
+        <tr>
+          <td><%= o.streetAddress %></td>
+          <td><%= o.created_at %></td>
+          <td><%= number_to_currency o.total %></td> <!-- should this be total? -->
+          <td><%= link_to 'Show', order_path(o) %></td>
+          <td><%= o.userId %></td>
+          <td><%= o.driver_id %></td>
+          <td><%= link_to 'Update Status', edit_order_path(o) %></td>
+          <td><%= link_to 'Delete', order_path(o), method: :delete %></td>
+        </tr>
+    <% end %>
+  </table>
+</div>
+</div>
