@@ -13,13 +13,39 @@
     There are no items in your shopping cart.  Please <%= link_to "go back", products_path %> and add some items to your cart.
   </p>
 <% else %>
+<div class="row">
+  <div class="progress-container">
+      <ul class="progressbar">
+        <% if @order.order_status_id.to_i == 1 %>
+          <li class="active">In Progress</li>
+        <%else%>
+          <li>In Progress</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 2 %>
+          <li class="active">Awaiting Driver Confirmation</li>
+        <%else%>
+          <li>Awaiting Driver Confirmation</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 3 %>
+          <li class="active">Out for Delivery</li>
+        <%else%>
+          <li>Out for Delivery</li>
+        <%end %>
+        <% if @order.order_status_id.to_i == 4 %>
+          <li class="active">Completed</li>
+        <%else%>
+          <li>Completed</li>
+        <%end %>
+      </ul>
+  </div>
+</div>
   <% @order_items.each do |order_item| %>
     <%= render 'carts/cart_row', product: order_item.product, order_item: order_item, show_total: true %>
   <% end %>
     <div class="well cart-total">
       <h4 style="padding-right: 30px" class="text-right">Subtotal: <span style="color: green"><%= number_to_currency @order.subtotal %></span></h4>
       <h4 style="padding-right: 30px" class="text-right">Shipping: <span style="color: green">$10.00</span></h4>
-      <h4 style="padding-right: 30px" class="text-right">Total: <span style="color: green"><%= number_to_currency (@order.subtotal + 10) %></span></h4>
+      <h4 style="padding-right: 30px" class="text-right">Total: <span style="color: green"><%= number_to_currency (@order.subtotal + 3) %></span></h4>
     </div>
   <%= link_to 'Go to Checkout', carts_payment_path, class:"btn btn-primary checkout-btn btn-large"%>
 <% end %>
