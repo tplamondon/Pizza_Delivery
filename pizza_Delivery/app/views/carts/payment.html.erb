@@ -49,6 +49,12 @@
       <%= form.label(:phoneNumber, "Phone Number") %>
       <%= form.text_field :phoneNumber, :required => true %>
     </div>
+    <%if !current_order.store_id?%>
+    <div>
+        <%= form.label(:store_id, "Choose Store Location") %>
+        <%=form.select :store_id, Store.all.map{ |s| [s.street_address, s.id] }, :required => true %>
+    </div>
+    <%end%>
     <%= form.hidden_field :userId, :required => true, :value => current_user.id %>
     <%= form.hidden_field :order_status_id, value: 2 %>
     <%= form.hidden_field :store_id, value: current_order.store_id, :required => true %>
