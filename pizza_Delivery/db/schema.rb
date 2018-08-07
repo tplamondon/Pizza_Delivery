@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_06_185315) do
+ActiveRecord::Schema.define(version: 2018_08_05_004549) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -71,15 +71,6 @@ ActiveRecord::Schema.define(version: 2018_08_06_185315) do
     t.index ["driver_id"], name: "index_orders_on_driver_id"
     t.index ["order_status_id"], name: "index_orders_on_order_status_id"
     t.index ["store_id"], name: "index_orders_on_store_id"
-  end
-
-  create_table "places", force: :cascade do |t|
-    t.string "name"
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
