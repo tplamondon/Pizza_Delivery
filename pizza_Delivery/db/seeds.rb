@@ -58,5 +58,10 @@ OrderStatus.create! id: 3, name: "Shipped"
 OrderStatus.create! id: 4, name: "Completed"
 OrderStatus.create! id: 5, name: "Cancelled"
 
+Store.delete_all
+Store.create! id: 1, street_address: "8888 Univercity Drive", city: "Burnaby", province: "British Columbia", zipCode: "V5A 1S6"
+Store.create! id: 2, street_address: "2850 Grandview Hwy", city: "Vancouver", province: "British Columbia", zipCode: "V5M 2C9"
+Store.create! id: 3, street_address: "2850 Shaugnessy St #2111", city: "Port Coquitlam", province: "British Columbia", zipCode: "V3C 6K5"
+
 #OrderItem.delete_all
 #Order.delete_all
