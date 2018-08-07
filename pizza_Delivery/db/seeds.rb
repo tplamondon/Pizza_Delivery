@@ -20,24 +20,36 @@ Product.create! id: 3, name: "Cheese Pizza", price: 8.00, active: true, food: 1,
 Product.create! id: 4, name: "Veggie Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/veggie.jpg"
 Product.create! id: 5, name: "Olive and Ham Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/blackolive.jpg"
 Product.create! id: 6, name: "Garlic Pizza", price: 12.00, active: true, food: 1, image_src: "/assets/pizzas/garlic.jpg"
+Product.create! id: 7, name: "Meat Lovers Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
+Product.create! id: 8, name: "Square Pizza", price: 13.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
+Product.create! id: 9, name: "Thin Crust Pizza", price: 15.00, active: true, food: 1, image_src: "/assets/pizzas/meat-lovers.jpg"
 
-Product.create! id: 7, name: "Coca Cola", price: 3.00, active: true, food: 2, image_src: "/assets/drinks/Coca-Cola.jpg"
-Product.create! id: 8, name: "Pepsi", price: 3.00, active: true, food: 2, image_src: "/assets/drinks/Pepsi.png"
-Product.create! id: 9, name: "Mountain Dew", price: 3.00, active: true, food: 2, image_src: "/assets/drinks/Mountain-Dew.jpg"
-Product.create! id: 10, name: "Dr Pepper", price: 3.50, active: true, food: 2, image_src: "/assets/drinks/DrPepper.png"
+Product.create! id: 10, name: "Coca Cola", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/Coca-Cola.jpg"
+Product.create! id: 11, name: "Pepsi", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/Pepsi.png"
+Product.create! id: 12, name: "Mountain Dew", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/Mountain-Dew.jpg"
+Product.create! id: 13, name: "Dr Pepper", price: 2.00, active: true, food: 2, image_src: "/assets/drinks/DrPepper.png"
 
-Product.create! id: 11, name: "Vanilla Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/vanilla.jpg"
-Product.create! id: 12, name: "Chocolate Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/chocolate.jpg"
-Product.create! id: 13, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/strawberry.jpg"
-Product.create! id: 14, name: "Apple Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
+Product.create! id: 14, name: "Vanilla Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/vanilla.jpg"
+Product.create! id: 15, name: "Chocolate Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/chocolate.jpg"
+Product.create! id: 16, name: "Strawberry Ice-cream", price: 5.00, active: true, food: 3, image_src: "/assets/desserts/strawberry.jpg"
+Product.create! id: 17, name: "Apple Pie", price: 7.50, active: true, food: 3, image_src: "/assets/desserts/applePie.jpg"
 
-Product.create! id: 15, name: "Spinach Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Spinnach.jpg"
-Product.create! id: 16, name: "Salad Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Salad.jpg"
-Product.create! id: 17, name: "Bread Sticks", price: 6.50, active: true, food: 4, image_src: "/assets/appetisers/Bread.jpg"
+Product.create! id: 18, name: "Spinach Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Spinnach.jpg"
+Product.create! id: 19, name: "Salad Rolls", price: 4.00, active: true, food: 4, image_src: "/assets/appetisers/Salad.jpg"
+Product.create! id: 20, name: "Bread Sticks", price: 5.00, active: true, food: 4, image_src: "/assets/appetisers/Bread.jpg"
+Product.create! id: 21, name: "Cheesy Breadsticks", price: 6.50, active: true, food: 4, image_src: "/assets/appetisers/cheesy-bread.jpg"
+Product.create! id: 22, name: "Fries", price: 3.50, active: true, food: 4, image_src: "/assets/appetisers/Fries.jpg"
+Product.create! id: 23, name: "Poutine", price: 8.50, active: true, food: 4, image_src: "/assets/appetisers/poutine.jpg"
 
-Product.create! id: 18, name: "Chicken Wings", price: 6.00, active: true, food: 5, image_src: "/assets/wings/Chicken.jpg"
-Product.create! id: 19, name: "Turkey Wings", price: 6.00, active: true, food: 5, image_src: "/assets/wings/Turkey.jpg"
-Product.create! id: 20, name: "Spicy Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/Spicy.jpg"
+
+Product.create! id: 24, name: "Soy Sauce Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/soy-sauce.jpg"
+Product.create! id: 25, name: "Asian Zing Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/asian-zing.jpg"
+Product.create! id: 26, name: "Garlic Parmesan Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/garlic-parm.jpg"
+Product.create! id: 27, name: "Caribbean Jerk Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/carib-jerk.jpg"
+Product.create! id: 28, name: "Mango Habanero Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/mango-habanero.jpg"
+Product.create! id: 29, name: "Spicy Wings", price: 7.50, active: true, food: 5, image_src: "/assets/wings/Spicy.jpg"
+
+
 
 OrderStatus.delete_all
 OrderStatus.create! id: 1, name: "In Progress"
